@@ -7,9 +7,15 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <WebKit/WebKit.h>
 
-@interface AZAppDelegate : NSObject <NSApplicationDelegate>
+@interface AZAppDelegate : NSObject <NSApplicationDelegate,NSUserNotificationCenterDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
+@property (weak) IBOutlet WebView *webView;
+@property (weak) IBOutlet NSView *toolBar;
+@property (assign) BOOL hasNew;
 
+- (IBAction)shareCurrentMusic:(id)sender;
+- (IBAction)donateToAladdin:(id)sender;
 @end

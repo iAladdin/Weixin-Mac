@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4439" systemVersion="13A451" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4457.6" systemVersion="13A524d" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4439"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4457.6"/>
+        <plugIn identifier="com.apple.WebKitIBPlugin" version="3330"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -439,18 +440,83 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="Weixin" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="371">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+        <window title="Weixin by Aladdin" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="371">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1418"/>
+            <rect key="contentRect" x="335" y="390" width="980" height="524"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
             <view key="contentView" id="372">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                <rect key="frame" x="0.0" y="0.0" width="980" height="524"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <webView translatesAutoresizingMaskIntoConstraints="NO" id="T1F-VG-nxQ">
+                        <rect key="frame" x="0.0" y="0.0" width="980" height="524"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12">
+                            <nil key="identifier"/>
+                        </webPreferences>
+                        <connections>
+                            <outlet property="UIDelegate" destination="494" id="3rc-m6-YD8"/>
+                            <outlet property="frameLoadDelegate" destination="494" id="tE4-cM-30J"/>
+                        </connections>
+                    </webView>
+                    <customView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mfo-N3-bpm" customClass="AZView">
+                        <rect key="frame" x="0.0" y="0.0" width="980" height="67"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rLW-TU-xGd" customClass="AZHoverButton">
+                                <rect key="frame" x="780" y="8" width="180" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="squareTextured" title="去帮Aladdin买猫粮" bezelStyle="texturedSquare" image="alipay-logo" imagePosition="right" alignment="center" imageScaling="proportionallyDown" inset="2" id="cLT-ZW-m5T">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system" size="14"/>
+                                </buttonCell>
+                            </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mNZ-Ik-6wb">
+                                <rect key="frame" x="10" y="10" width="70" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="squareTextured" bezelStyle="texturedSquare" image="left" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="D4p-hn-SM6">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AIv-fT-9NK">
+                                <rect key="frame" x="98" y="10" width="70" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="squareTextured" bezelStyle="texturedSquare" image="right" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="H4w-w3-XfJ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="980" id="E92-ow-rqe"/>
+                            <constraint firstAttribute="height" constant="67" id="veS-ZO-2vG"/>
+                        </constraints>
+                    </customView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Mfo-N3-bpm" firstAttribute="trailing" secondItem="T1F-VG-nxQ" secondAttribute="trailing" id="2me-Ii-iXj"/>
+                    <constraint firstItem="Mfo-N3-bpm" firstAttribute="bottom" secondItem="T1F-VG-nxQ" secondAttribute="bottom" id="4ba-G3-1E7"/>
+                    <constraint firstItem="T1F-VG-nxQ" firstAttribute="leading" secondItem="372" secondAttribute="leading" id="8LY-AS-3z2"/>
+                    <constraint firstItem="T1F-VG-nxQ" firstAttribute="trailing" secondItem="372" secondAttribute="trailing" id="AjL-ge-c47"/>
+                    <constraint firstItem="T1F-VG-nxQ" firstAttribute="top" secondItem="372" secondAttribute="top" id="Gzk-5D-oja"/>
+                    <constraint firstItem="T1F-VG-nxQ" firstAttribute="top" secondItem="372" secondAttribute="top" id="dv1-cj-vdq"/>
+                    <constraint firstItem="T1F-VG-nxQ" firstAttribute="bottom" secondItem="372" secondAttribute="bottom" id="mUy-FN-p4s"/>
+                    <constraint firstAttribute="bottom" secondItem="T1F-VG-nxQ" secondAttribute="bottom" id="rYT-XW-Nhy"/>
+                    <constraint firstItem="Mfo-N3-bpm" firstAttribute="leading" secondItem="T1F-VG-nxQ" secondAttribute="leading" id="sI4-CS-vHB"/>
+                    <constraint firstItem="T1F-VG-nxQ" firstAttribute="leading" secondItem="372" secondAttribute="leading" id="tv9-53-9BS"/>
+                    <constraint firstItem="T1F-VG-nxQ" firstAttribute="trailing" secondItem="372" secondAttribute="trailing" id="xqM-w3-8Gg"/>
+                    <constraint firstItem="Mfo-N3-bpm" firstAttribute="top" secondItem="372" secondAttribute="top" constant="457" id="xwM-9M-onU"/>
+                    <constraint firstItem="T1F-VG-nxQ" firstAttribute="bottom" secondItem="372" secondAttribute="bottom" id="yr7-wf-4ja"/>
+                </constraints>
             </view>
         </window>
         <customObject id="494" customClass="AZAppDelegate">
             <connections>
+                <action selector="donateToAladdin:" destination="rLW-TU-xGd" id="xBf-pc-zcz"/>
+                <outlet property="toolBar" destination="Mfo-N3-bpm" id="VAn-rY-evV"/>
+                <outlet property="webView" destination="T1F-VG-nxQ" id="Ifh-Of-GCv"/>
                 <outlet property="window" destination="371" id="532"/>
             </connections>
         </customObject>
@@ -464,4 +530,50 @@
             </connections>
         </customObject>
     </objects>
+    <resources>
+        <image name="alipay-logo" width="256" height="256"/>
+        <image name="left" width="256" height="256"/>
+        <image name="right" width="256" height="256"/>
+    </resources>
+    <classes>
+        <class className="AZAppDelegate" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AZAppDelegate.h"/>
+            <relationships>
+                <relationship kind="action" name="donateToAladdin:"/>
+                <relationship kind="action" name="shareCurrentMusic:"/>
+                <relationship kind="outlet" name="toolBar" candidateClass="NSView"/>
+                <relationship kind="outlet" name="webView" candidateClass="WebView"/>
+                <relationship kind="outlet" name="window" candidateClass="NSWindow"/>
+            </relationships>
+        </class>
+        <class className="NSDocument">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSDocument.h"/>
+            <relationships>
+                <relationship kind="action" name="browseDocumentVersions:"/>
+                <relationship kind="action" name="duplicateDocument:"/>
+                <relationship kind="action" name="lockDocument:"/>
+                <relationship kind="action" name="moveDocument:"/>
+                <relationship kind="action" name="moveDocumentToUbiquityContainer:"/>
+                <relationship kind="action" name="printDocument:"/>
+                <relationship kind="action" name="renameDocument:"/>
+                <relationship kind="action" name="revertDocumentToSaved:"/>
+                <relationship kind="action" name="runPageLayout:"/>
+                <relationship kind="action" name="saveDocument:"/>
+                <relationship kind="action" name="saveDocumentAs:"/>
+                <relationship kind="action" name="saveDocumentTo:"/>
+                <relationship kind="action" name="saveDocumentToPDF:"/>
+                <relationship kind="action" name="unlockDocument:"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="NSTextView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSTextView.h"/>
+            <relationships>
+                <relationship kind="action" name="orderFrontSharingServicePicker:"/>
+                <relationship kind="action" name="toggleQuickLookPreviewPanel:"/>
+            </relationships>
+        </class>
+    </classes>
 </document>
