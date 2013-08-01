@@ -458,6 +458,7 @@
                         <connections>
                             <outlet property="UIDelegate" destination="494" id="3rc-m6-YD8"/>
                             <outlet property="frameLoadDelegate" destination="494" id="tE4-cM-30J"/>
+                            <outlet property="policyDelegate" destination="494" id="mE2-G9-SoB"/>
                         </connections>
                     </webView>
                     <customView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mfo-N3-bpm" customClass="AZView">

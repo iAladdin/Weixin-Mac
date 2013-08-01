@@ -145,4 +145,14 @@
     
 }
 #pragma mark WebUIDelegate END
+
+#pragma mark WebPolicyDelegate START
+- (void)webView:(WebView *)webView decidePolicyForNewWindowAction:(NSDictionary *)actionInformation
+        request:(NSURLRequest *)request
+   newFrameName:(NSString *)frameName
+decisionListener:(id<WebPolicyDecisionListener>)listener{
+    NSLog(@"%s %@ \n %@ \n %@",__PRETTY_FUNCTION__,actionInformation,request,frameName);
+    [[NSWorkspace sharedWorkspace] openURL:[request URL]];
+}
+#pragma mark WebPolicyDelegate END
 @end
