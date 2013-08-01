@@ -66,7 +66,7 @@ static AZThemeManager *_sharedInstance = nil;
     if (self) {
         _backgrounds = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Backgrounds" ofType:@"plist"]];
         NSString * currentIndexStr = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentIndex"];
-        if (currentIndexStr) {
+        if (!currentIndexStr) {
             currentIndexStr = @"0";
             self.currentIndex = [currentIndexStr intValue];
             [self syncUserDefault];
