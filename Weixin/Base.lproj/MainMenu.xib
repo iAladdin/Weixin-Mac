@@ -515,6 +515,8 @@
         <customObject id="494" customClass="AZAppDelegate">
             <connections>
                 <action selector="donateToAladdin:" destination="rLW-TU-xGd" id="xBf-pc-zcz"/>
+                <action selector="lastBackground:" destination="mNZ-Ik-6wb" id="1cV-8H-wdx"/>
+                <action selector="nextBackground:" destination="AIv-fT-9NK" id="uLs-7q-8RV"/>
                 <outlet property="toolBar" destination="Mfo-N3-bpm" id="VAn-rY-evV"/>
                 <outlet property="webView" destination="T1F-VG-nxQ" id="Ifh-Of-GCv"/>
                 <outlet property="window" destination="371" id="532"/>
@@ -540,6 +542,8 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AZAppDelegate.h"/>
             <relationships>
                 <relationship kind="action" name="donateToAladdin:"/>
+                <relationship kind="action" name="lastBackground:"/>
+                <relationship kind="action" name="nextBackground:"/>
                 <relationship kind="action" name="shareCurrentMusic:"/>
                 <relationship kind="outlet" name="toolBar" candidateClass="NSView"/>
                 <relationship kind="outlet" name="webView" candidateClass="WebView"/>
@@ -573,6 +577,12 @@
             <relationships>
                 <relationship kind="action" name="orderFrontSharingServicePicker:"/>
                 <relationship kind="action" name="toggleQuickLookPreviewPanel:"/>
+            </relationships>
+        </class>
+        <class className="WebView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WebView.h"/>
+            <relationships>
+                <relationship kind="action" name="reloadFromOrigin:"/>
             </relationships>
         </class>
     </classes>

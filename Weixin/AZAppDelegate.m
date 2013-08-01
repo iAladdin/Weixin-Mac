@@ -10,6 +10,7 @@
 #import "MASShortcut.h"
 #import "MASShortcut+Monitoring.h"
 #import "iTunes.h"
+#import "AZThemeManager.h"
 
 @implementation AZAppDelegate
 
@@ -18,6 +19,14 @@
 //
     NSString * jsString = [NSString stringWithFormat:@"$(\"textarea#textInput\").val(\"%@\");$(\"a.chatSend\").click()",[[itunes currentTrack] name]];
     [self.webView stringByEvaluatingJavaScriptFromString:jsString];
+}
+- (IBAction)nextBackground:(id)sender{
+    [[AZThemeManager sharedManager] actionToNext];
+    [self changeBackground:self.webView];
+}
+- (IBAction)lastBackground:(id)sender{
+    [[AZThemeManager sharedManager] actionToLast];
+    [self changeBackground:self.webView];
 }
 
 - (IBAction)donateToAladdin:(id)sender{
@@ -100,12 +109,17 @@
     self.hasNew = YES;
 }
 
-- (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame{
-    NSLog(@"%@",[sender stringByEvaluatingJavaScriptFromString:@"$(\".footer\").hide()"]);
-    NSLog(@"%@",[[NSBundle mainBundle] URLForImageResource:@"Background"]);
-    NSString * jsString = [NSString stringWithFormat:@"$(\"body\").css(\"background-image\",\"url(http://image.zol.com.cn/wallpaper/down_pic.php?id=16721)\");$(\"body\").css(\"background-size\",\"100%% auto\");"];
+- (void)changeBackground:(WebView *)sender {
+    //    NSLog(@"%ld",(long)[AZThemeManager sharedManager].currentIndex);
+    NSString * jsString = [NSString stringWithFormat:@"$(\"body\").css(\"background-image\",\"url(%@)\");$(\"body\").css(\"background-size\",\"100%% auto\");",[AZThemeManager sharedManager].currentBackground];
     //,[[NSBundle mainBundle] URLForImageResource:@"Background"]
     NSLog(@"%@",[sender stringByEvaluatingJavaScriptFromString:jsString]);
+}
+
+- (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame{
+    NSLog(@"%@",[sender stringByEvaluatingJavaScriptFromString:@"$(\".footer\").hide()"]);
+    
+    [self changeBackground:sender];
 }
 
 #pragma mark WebFrameLoadDelegate END
