@@ -10,6 +10,7 @@
 		830D406B17AA0D9100ECA8A9 /* alipay-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 830D406A17AA0D9100ECA8A9 /* alipay-logo.png */; };
 		830D407317AA23A000ECA8A9 /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = 830D407217AA23A000ECA8A9 /* left.png */; };
 		830D407517AA23A800ECA8A9 /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = 830D407417AA23A800ECA8A9 /* right.png */; };
+		830D407717AA424200ECA8A9 /* Backgrounds.plist in Resources */ = {isa = PBXBuildFile; fileRef = 830D407617AA424200ECA8A9 /* Backgrounds.plist */; };
 		8315747817A8BC3200EB5CE0 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 8315746B17A8BC3200EB5CE0 /* .gitignore */; };
 		8315747917A8BC3200EB5CE0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 8315746C17A8BC3200EB5CE0 /* LICENSE */; };
 		8315747A17A8BC3200EB5CE0 /* MASShortcut+Monitoring.m in Sources */ = {isa = PBXBuildFile; fileRef = 8315746E17A8BC3200EB5CE0 /* MASShortcut+Monitoring.m */; };
@@ -18,7 +19,6 @@
 		8315747D17A8BC3200EB5CE0 /* MASShortcutView+UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 8315747417A8BC3200EB5CE0 /* MASShortcutView+UserDefaults.m */; };
 		8315747E17A8BC3200EB5CE0 /* MASShortcutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8315747617A8BC3200EB5CE0 /* MASShortcutView.m */; };
 		8315747F17A8BC3200EB5CE0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8315747717A8BC3200EB5CE0 /* README.md */; };
-		8315748217A904B800EB5CE0 /* Background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8315748117A904B800EB5CE0 /* Background.jpg */; };
 		83676D8217A64844008B88EF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83676D8117A64844008B88EF /* Cocoa.framework */; };
 		83676D8C17A64844008B88EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83676D8A17A64844008B88EF /* InfoPlist.strings */; };
 		83676D8E17A64844008B88EF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83676D8D17A64844008B88EF /* main.m */; };
@@ -31,6 +31,7 @@
 		83676DAA17A64844008B88EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83676DA817A64844008B88EF /* InfoPlist.strings */; };
 		83676DAC17A64844008B88EF /* WeixinTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83676DAB17A64844008B88EF /* WeixinTests.m */; };
 		83676DB617A65DC5008B88EF /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83676DB517A65DC5008B88EF /* WebKit.framework */; };
+		83E5562117AA57B800872BD9 /* AZThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 832251AE17AA45FE0078694F /* AZThemeManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		830D406A17AA0D9100ECA8A9 /* alipay-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alipay-logo.png"; sourceTree = "<group>"; };
 		830D407217AA23A000ECA8A9 /* left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left.png; sourceTree = "<group>"; };
 		830D407417AA23A800ECA8A9 /* right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right.png; sourceTree = "<group>"; };
+		830D407617AA424200ECA8A9 /* Backgrounds.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Backgrounds.plist; sourceTree = "<group>"; };
 		8315746B17A8BC3200EB5CE0 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		8315746C17A8BC3200EB5CE0 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		8315746D17A8BC3200EB5CE0 /* MASShortcut+Monitoring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASShortcut+Monitoring.h"; sourceTree = "<group>"; };
@@ -61,7 +63,8 @@
 		8315747617A8BC3200EB5CE0 /* MASShortcutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASShortcutView.m; sourceTree = "<group>"; };
 		8315747717A8BC3200EB5CE0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		8315748017A8C99500EB5CE0 /* iTunes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunes.h; sourceTree = SOURCE_ROOT; };
-		8315748117A904B800EB5CE0 /* Background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Background.jpg; sourceTree = "<group>"; };
+		832251AD17AA45FE0078694F /* AZThemeManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AZThemeManager.h; path = ../AZThemeManager.h; sourceTree = "<group>"; };
+		832251AE17AA45FE0078694F /* AZThemeManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AZThemeManager.m; path = ../AZThemeManager.m; sourceTree = "<group>"; };
 		83676D7E17A64844008B88EF /* Weixin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weixin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83676D8117A64844008B88EF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		83676D8417A64844008B88EF /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -169,6 +172,8 @@
 		83676D8717A64844008B88EF /* Weixin */ = {
 			isa = PBXGroup;
 			children = (
+				832251AD17AA45FE0078694F /* AZThemeManager.h */,
+				832251AE17AA45FE0078694F /* AZThemeManager.m */,
 				8315746A17A8BC3200EB5CE0 /* MASShortcut */,
 				83676D9317A64844008B88EF /* AZAppDelegate.h */,
 				83676D9417A64844008B88EF /* AZAppDelegate.m */,
@@ -178,7 +183,6 @@
 				830D406A17AA0D9100ECA8A9 /* alipay-logo.png */,
 				830D407217AA23A000ECA8A9 /* left.png */,
 				830D407417AA23A800ECA8A9 /* right.png */,
-				8315748117A904B800EB5CE0 /* Background.jpg */,
 				83676D8817A64844008B88EF /* Supporting Files */,
 			);
 			path = Weixin;
@@ -192,6 +196,7 @@
 				83676D8D17A64844008B88EF /* main.m */,
 				83676D8F17A64844008B88EF /* Weixin-Prefix.pch */,
 				83676D9017A64844008B88EF /* Credits.rtf */,
+				830D407617AA424200ECA8A9 /* Backgrounds.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -297,10 +302,10 @@
 				8315747817A8BC3200EB5CE0 /* .gitignore in Resources */,
 				83676D8C17A64844008B88EF /* InfoPlist.strings in Resources */,
 				8315747F17A8BC3200EB5CE0 /* README.md in Resources */,
-				8315748217A904B800EB5CE0 /* Background.jpg in Resources */,
 				830D407317AA23A000ECA8A9 /* left.png in Resources */,
 				83676D9A17A64844008B88EF /* Images.xcassets in Resources */,
 				83676D9217A64844008B88EF /* Credits.rtf in Resources */,
+				830D407717AA424200ECA8A9 /* Backgrounds.plist in Resources */,
 				83676D9817A64844008B88EF /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,6 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83E5562117AA57B800872BD9 /* AZThemeManager.m in Sources */,
 				8315747B17A8BC3200EB5CE0 /* MASShortcut+UserDefaults.m in Sources */,
 				8315747C17A8BC3200EB5CE0 /* MASShortcut.m in Sources */,
 				83676D8E17A64844008B88EF /* main.m in Sources */,
@@ -462,6 +468,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Weixin/Weixin-Prefix.pch";
 				INFOPLIST_FILE = "Weixin/Weixin-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -475,6 +482,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Weixin/Weixin-Prefix.pch";
 				INFOPLIST_FILE = "Weixin/Weixin-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

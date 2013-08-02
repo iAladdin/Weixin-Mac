@@ -16,6 +16,10 @@
 @property (weak) IBOutlet NSView *toolBar;
 @property (assign) BOOL hasNew;
 
+- (void)changeBackground:(WebView *)sender;
 - (IBAction)shareCurrentMusic:(id)sender;
 - (IBAction)donateToAladdin:(id)sender;
+- (IBAction)nextBackground:(id)sender;
+- (IBAction)lastBackground:(id)sender;
+
 @end
