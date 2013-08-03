@@ -57,7 +57,11 @@
 - (void)registerShortCuts{
     MASShortcut *shortcut = [MASShortcut shortcutWithKeyCode:kVK_ANSI_O modifierFlags:NSCommandKeyMask|NSControlKeyMask];
     NSString *  _constantShortcutMonitor = [MASShortcut addGlobalHotkeyMonitorWithShortcut:shortcut handler:^{
-        [NSApp activateIgnoringOtherApps:YES];  
+        [NSApp activateIgnoringOtherApps:YES];
+        if([self.window isMiniaturized])
+        {
+            [self.window deminiaturize:self];
+        }
     }];
     NSLog(@"%@",_constantShortcutMonitor);
 }
@@ -74,10 +78,10 @@
 }
 
 - (void)mouseEntered:(NSEvent *)theEvent{
-    self.toolBar.alphaValue = 0.7;
+    [[self.toolBar animator] setAlphaValue:0.7];
 }
 - (void)mouseExited:(NSEvent *)theEvent{
-    self.toolBar.alphaValue = 0.3;
+    [[self.toolBar animator] setAlphaValue:0.3];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
@@ -111,7 +115,7 @@
 
 - (void)changeBackground:(WebView *)sender {
     //    NSLog(@"%ld",(long)[AZThemeManager sharedManager].currentIndex);
-    NSString * jsString = [NSString stringWithFormat:@"$(\"body\").css(\"background-image\",\"url(%@)\");$(\"body\").css(\"background-size\",\"100%% auto\");",[AZThemeManager sharedManager].currentBackground];
+    NSString * jsString = [NSString stringWithFormat:@"$(\"body\").css(\"background-image\",\"url(%@)\");$(\"body\").css(\"background-size\",\"auto auto\");",[AZThemeManager sharedManager].currentBackground];
     //,[[NSBundle mainBundle] URLForImageResource:@"Background"]
     NSLog(@"%@",[sender stringByEvaluatingJavaScriptFromString:jsString]);
 }

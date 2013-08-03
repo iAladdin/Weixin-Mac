@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4457.6" systemVersion="13A524d" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment defaultVersion="1080" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4457.6"/>
         <plugIn identifier="com.apple.WebKitIBPlugin" version="3330"/>
     </dependencies>
@@ -441,10 +442,11 @@
             </items>
         </menu>
         <window title="Weixin by Aladdin" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="371">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <windowStyleMask key="styleMask" titled="YES" miniaturizable="YES" resizable="YES"/>
             <rect key="contentRect" x="335" y="390" width="980" height="524"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <value key="minSize" type="size" width="980" height="400"/>
+            <value key="maxSize" type="size" width="1024" height="730"/>
             <view key="contentView" id="372">
                 <rect key="frame" x="0.0" y="0.0" width="980" height="524"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -465,25 +467,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="980" height="67"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rLW-TU-xGd" customClass="AZHoverButton">
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rLW-TU-xGd" customClass="AZHoverButton">
                                 <rect key="frame" x="780" y="8" width="180" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="UXY-s9-PGX"/>
+                                </constraints>
                                 <buttonCell key="cell" type="squareTextured" title="去帮Aladdin买猫粮" bezelStyle="texturedSquare" image="alipay-logo" imagePosition="right" alignment="center" imageScaling="proportionallyDown" inset="2" id="cLT-ZW-m5T">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system" size="14"/>
                                 </buttonCell>
                             </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mNZ-Ik-6wb">
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="mNZ-Ik-6wb">
                                 <rect key="frame" x="10" y="10" width="70" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="g9o-TE-Bpx"/>
+                                </constraints>
                                 <buttonCell key="cell" type="squareTextured" bezelStyle="texturedSquare" image="left" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="D4p-hn-SM6">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AIv-fT-9NK">
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="AIv-fT-9NK">
                                 <rect key="frame" x="98" y="10" width="70" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="e4z-Kk-NPx"/>
+                                </constraints>
                                 <buttonCell key="cell" type="squareTextured" bezelStyle="texturedSquare" image="right" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="H4w-w3-XfJ">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -491,25 +502,27 @@
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="width" constant="980" id="E92-ow-rqe"/>
+                            <constraint firstItem="mNZ-Ik-6wb" firstAttribute="leading" secondItem="Mfo-N3-bpm" secondAttribute="leading" constant="10" id="6FG-oR-UFK"/>
+                            <constraint firstItem="AIv-fT-9NK" firstAttribute="leading" secondItem="mNZ-Ik-6wb" secondAttribute="trailing" constant="18" id="SAm-UO-ukd"/>
+                            <constraint firstItem="AIv-fT-9NK" firstAttribute="top" secondItem="mNZ-Ik-6wb" secondAttribute="top" id="UwJ-IX-2by"/>
+                            <constraint firstItem="AIv-fT-9NK" firstAttribute="bottom" secondItem="mNZ-Ik-6wb" secondAttribute="bottom" id="W6Z-k5-NVL"/>
+                            <constraint firstItem="rLW-TU-xGd" firstAttribute="centerY" secondItem="Mfo-N3-bpm" secondAttribute="centerY" id="cfg-oo-uVx"/>
+                            <constraint firstItem="rLW-TU-xGd" firstAttribute="top" secondItem="Mfo-N3-bpm" secondAttribute="top" constant="9" id="h7B-hl-omS"/>
+                            <constraint firstAttribute="bottom" secondItem="mNZ-Ik-6wb" secondAttribute="bottom" constant="10" id="ngv-NJ-KdP"/>
+                            <constraint firstItem="mNZ-Ik-6wb" firstAttribute="top" secondItem="Mfo-N3-bpm" secondAttribute="top" constant="17" id="tfo-HS-EYc"/>
                             <constraint firstAttribute="height" constant="67" id="veS-ZO-2vG"/>
+                            <constraint firstAttribute="trailing" secondItem="rLW-TU-xGd" secondAttribute="trailing" constant="20" symbolic="YES" id="zjO-yL-YqX"/>
                         </constraints>
                     </customView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Mfo-N3-bpm" firstAttribute="trailing" secondItem="T1F-VG-nxQ" secondAttribute="trailing" id="2me-Ii-iXj"/>
+                    <constraint firstItem="Mfo-N3-bpm" firstAttribute="leading" secondItem="372" secondAttribute="leading" id="2yG-Kb-LsX"/>
                     <constraint firstItem="Mfo-N3-bpm" firstAttribute="bottom" secondItem="T1F-VG-nxQ" secondAttribute="bottom" id="4ba-G3-1E7"/>
-                    <constraint firstItem="T1F-VG-nxQ" firstAttribute="leading" secondItem="372" secondAttribute="leading" id="8LY-AS-3z2"/>
-                    <constraint firstItem="T1F-VG-nxQ" firstAttribute="trailing" secondItem="372" secondAttribute="trailing" id="AjL-ge-c47"/>
-                    <constraint firstItem="T1F-VG-nxQ" firstAttribute="top" secondItem="372" secondAttribute="top" id="Gzk-5D-oja"/>
-                    <constraint firstItem="T1F-VG-nxQ" firstAttribute="top" secondItem="372" secondAttribute="top" id="dv1-cj-vdq"/>
-                    <constraint firstItem="T1F-VG-nxQ" firstAttribute="bottom" secondItem="372" secondAttribute="bottom" id="mUy-FN-p4s"/>
-                    <constraint firstAttribute="bottom" secondItem="T1F-VG-nxQ" secondAttribute="bottom" id="rYT-XW-Nhy"/>
+                    <constraint firstItem="T1F-VG-nxQ" firstAttribute="top" secondItem="372" secondAttribute="top" id="L38-03-JfT"/>
+                    <constraint firstItem="T1F-VG-nxQ" firstAttribute="trailing" secondItem="372" secondAttribute="trailing" id="dUW-xN-qty"/>
                     <constraint firstItem="Mfo-N3-bpm" firstAttribute="leading" secondItem="T1F-VG-nxQ" secondAttribute="leading" id="sI4-CS-vHB"/>
-                    <constraint firstItem="T1F-VG-nxQ" firstAttribute="leading" secondItem="372" secondAttribute="leading" id="tv9-53-9BS"/>
-                    <constraint firstItem="T1F-VG-nxQ" firstAttribute="trailing" secondItem="372" secondAttribute="trailing" id="xqM-w3-8Gg"/>
-                    <constraint firstItem="Mfo-N3-bpm" firstAttribute="top" secondItem="372" secondAttribute="top" constant="457" id="xwM-9M-onU"/>
-                    <constraint firstItem="T1F-VG-nxQ" firstAttribute="bottom" secondItem="372" secondAttribute="bottom" id="yr7-wf-4ja"/>
+                    <constraint firstItem="Mfo-N3-bpm" firstAttribute="bottom" secondItem="372" secondAttribute="bottom" id="xCl-wK-5T2"/>
                 </constraints>
             </view>
         </window>
