@@ -12,7 +12,10 @@
 #import "iTunes.h"
 #import "AZThemeManager.h"
 
+
 @implementation AZAppDelegate
+
+
 
 - (IBAction)shareCurrentMusic:(id)sender{
     iTunesApplication *itunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
@@ -40,7 +43,7 @@
                       @selector(sheetDidEnd:returnCode:contextInfo:),
                       @selector(sheetDidDismiss:returnCode:contextInfo:),
                       (__bridge void *)(sender),
-                      @"虽然这个App很简单，但还是考虑赞助给Aladdin和他的四只猫猫吧");
+                      @"虽然这个App很简单，但还是考虑赞助给Aladdin和他的12只猫猫吧");
 }
 
 #pragma mark alertDelegate START
@@ -55,7 +58,7 @@
 #pragma mark alertDelegate END
 
 - (void)registerShortCuts{
-    MASShortcut *shortcut = [MASShortcut shortcutWithKeyCode:kVK_ANSI_O modifierFlags:NSCommandKeyMask|NSControlKeyMask];
+    MASShortcut *shortcut = [MASShortcut shortcutWithKeyCode:kVK_ANSI_Minus modifierFlags:NSCommandKeyMask|NSControlKeyMask];
     NSString *  _constantShortcutMonitor = [MASShortcut addGlobalHotkeyMonitorWithShortcut:shortcut handler:^{
         [NSApp activateIgnoringOtherApps:YES];
         if([self.window isMiniaturized])
@@ -86,13 +89,18 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+ 
+    [[self.window windowController] setShouldCascadeWindows:NO];
+    [self.window setFrameAutosaveName:[self.window representedFilename]];
+    
     [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
     [self registerShortCuts];
     NSURLRequest *request = [NSURLRequest requestWithURL:
-                             [NSURL URLWithString:@"http://wx.qq.com/"]];
+                             [NSURL URLWithString:@"http://wx.qq.com/?lang=zh_CN"]];
     [self.webView.mainFrame loadRequest:request];
     [self addWeixinToolBar];
+    
+    
 }
 
 - (void)applicationWillBecomeActive:(NSNotification *)notification{
@@ -112,12 +120,30 @@
     [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
     self.hasNew = YES;
 }
+- (NSString * )cssStringWithFileName:(NSString *)filename{
+    NSStringEncoding * encoding = NULL;
+    //$('head').append('<style type="text/css">body {margin:0;}</style>');
+    NSString * cssFileContent = [NSString stringWithContentsOfURL:[[NSBundle mainBundle] URLForResource:filename withExtension:@"css"]
+                                                usedEncoding:encoding
+                                                       error:nil];
+    NSString * cssString = [NSString stringWithFormat:@"'<style type=\"text/css\">%@</style>'",cssFileContent];
+    
+    return cssString;
+}
 
 - (void)changeBackground:(WebView *)sender {
-    //    NSLog(@"%ld",(long)[AZThemeManager sharedManager].currentIndex);
-    NSString * jsString = [NSString stringWithFormat:@"$(\"body\").css(\"background-image\",\"url(%@)\");$(\"body\").css(\"background-size\",\"auto auto\");",[AZThemeManager sharedManager].currentBackground];
-    //,[[NSBundle mainBundle] URLForImageResource:@"Background"]
-    NSLog(@"%@",[sender stringByEvaluatingJavaScriptFromString:jsString]);
+
+    NSString* css = [NSString stringWithFormat:@"\"body { background-image:url(%@);background-size:auto auto;} \"",[AZThemeManager sharedManager].currentBackground];
+    NSLog(@"css:\n %@",css);
+    NSString* js = [NSString stringWithFormat:
+                    @"var styleNode = document.createElement('style');\n"
+                    "styleNode.type = \"text/css\";\n"
+                    "var styleText = document.createTextNode(%@);\n"
+                    "styleNode.appendChild(styleText);\n"
+                    "document.getElementsByTagName('body')[0].appendChild(styleNode);\n",css];
+    NSLog(@"js:\n%@",js);
+    [self.webView stringByEvaluatingJavaScriptFromString:js];
+    
 }
 
 - (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame{
@@ -127,6 +153,15 @@
 }
 
 #pragma mark WebFrameLoadDelegate END
+
+#pragma mark WebFrameLoadDelegate START
+- (id)webView:(WebView *)sender identifierForInitialRequest:(NSURLRequest *)request fromDataSource:(WebDataSource *)dataSource{
+//    NSLog(@"%@ %@ %@",sender,request,[[dataSource response] MIMEType]);
+    return dataSource;
+}
+#pragma mark WebFrameLoadDelegate END
+
+
 
 #pragma mark WebUIDelegate START
 

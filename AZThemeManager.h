@@ -7,12 +7,16 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "HTTPServer.h"
 
 @interface AZThemeManager : NSObject{
     NSArray * _backgrounds;
+    HTTPServer * _http;
+    NSString * _localhostPath;
 }
 @property  NSInteger currentIndex;
-
+@property (nonatomic,strong)    HTTPServer * http;
+@property (nonatomic,strong)    NSString * localhostPath;
 + (AZThemeManager *)sharedManager;
 - (void) actionToNext;
 - (void) actionToLast;

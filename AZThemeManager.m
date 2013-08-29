@@ -7,9 +7,17 @@
 //
 
 #import "AZThemeManager.h"
+#import "HTTPServer.h"
+#import "DDLog.h"
+#import "DDTTYLogger.h"
 
 @implementation AZThemeManager
+@synthesize http = _http;
+@synthesize localhostPath = _localhostPath;
+
+
 static AZThemeManager *_sharedInstance = nil;
+static const int ddLogLevel = LOG_ASYNC_VERBOSE;
 
 - (void)syncUserDefault{
     [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%li",(long)self.currentIndex] forKey:@"currentIndex"];
@@ -58,13 +66,50 @@ static AZThemeManager *_sharedInstance = nil;
     return _sharedInstance;
 }
 
+- (void) initHttpServer{
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+    self.http = [[HTTPServer alloc] init];
+    [self.http setType:@"_http._tcp."];
+    
+    NSInteger port = 51112;
+    
+    [self.http setPort:port];
+    
+    NSString *docRoot = [[[NSBundle mainBundle] bundlePath] stringByExpandingTildeInPath];
+    NSLog(@"Setting document root: %@", docRoot);
+    [self.http setDocumentRoot:docRoot];
+    
+    NSError *error = nil;
+    if(![self.http start:&error])
+    {
+        DDLogError(@"Error starting HTTP Server: %@", error);
+    }
+    self.localhostPath = [NSString stringWithFormat:@"127.0.0.1:%li/Contents/Resources/",(long)port];
+
+}
+
+- (void)localizedBackgrounds:(NSString *)themePath{
+    NSString * plistPath = [NSString stringWithFormat:@"%@/Backgrounds.plist",themePath];
+    NSArray * backgrounds = [[NSDictionary dictionaryWithContentsOfFile:plistPath] objectForKey:@"Backgrounds"];
+    NSArray * tempA = [NSArray arrayWithArray:backgrounds];
+    NSMutableArray * resultArray = [NSMutableArray arrayWithCapacity:backgrounds.count];
+    for (NSString * name in tempA) {
+        [resultArray addObject:[NSString stringWithFormat:@"http://%@%@/%@",self.localhostPath,[themePath lastPathComponent],name]];
+    }
+    _backgrounds = resultArray;
+}
 
 - (id)init
 {
     self = [super init];
     
     if (self) {
-        _backgrounds = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Backgrounds" ofType:@"plist"]];
+        [self initHttpServer];
+        
+        NSArray * themes = [[NSBundle mainBundle] pathsForResourcesOfType:@"bpack" inDirectory:nil];
+        
+        [self localizedBackgrounds:[themes objectAtIndex:0]];
+        
         NSString * currentIndexStr = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentIndex"];
         if (!currentIndexStr) {
             currentIndexStr = @"0";
@@ -72,7 +117,7 @@ static AZThemeManager *_sharedInstance = nil;
             [self syncUserDefault];
         }
         self.currentIndex = [currentIndexStr intValue];
-        
+
     }
     
     return self;

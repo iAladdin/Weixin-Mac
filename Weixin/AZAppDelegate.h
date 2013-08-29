@@ -8,8 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 #import <WebKit/WebKit.h>
-
-@interface AZAppDelegate : NSObject <NSApplicationDelegate,NSUserNotificationCenterDelegate>
+@class  HTTPServer;
+@interface AZAppDelegate : NSObject <NSApplicationDelegate,NSUserNotificationCenterDelegate>{
+    HTTPServer * httpServer;
+}
 
 @property (assign) IBOutlet NSWindow *window;
 @property (weak) IBOutlet WebView *webView;
