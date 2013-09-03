@@ -108,6 +108,7 @@
 		835DE7B017D5B4E300430263 /* NSUserDefaults+IntValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSUserDefaults+IntValue.h"; path = "Category/NSUserDefaults+IntValue.h"; sourceTree = "<group>"; };
 		835DE7B117D5B4E300430263 /* NSUserDefaults+IntValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSUserDefaults+IntValue.m"; path = "Category/NSUserDefaults+IntValue.m"; sourceTree = "<group>"; };
 		835DE7B317D5D08A00430263 /* Cats.bpack */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Cats.bpack; sourceTree = "<group>"; };
+		835DE7B517D5E40E00430263 /* local.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = local.js; sourceTree = "<group>"; };
 		83676D7E17A64844008B88EF /* Weixin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weixin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83676D8117A64844008B88EF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		83676D8417A64844008B88EF /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -322,6 +323,7 @@
 				83676D8D17A64844008B88EF /* main.m */,
 				83676D8F17A64844008B88EF /* Weixin-Prefix.pch */,
 				83676D9017A64844008B88EF /* Credits.rtf */,
+				835DE7B517D5E40E00430263 /* local.js */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";

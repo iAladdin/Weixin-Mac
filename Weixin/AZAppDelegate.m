@@ -105,6 +105,7 @@
 
 - (void)applicationWillBecomeActive:(NSNotification *)notification{
     self.hasNew = NO;
+    [NSApp dockTile].badgeLabel = nil;
 }
 - (BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag{
     [self.window orderFront:nil];
@@ -114,9 +115,19 @@
 #pragma mark WebFrameLoadDelegate START
 - (void)webView:(WebView *)sender didReceiveTitle:(NSString *)title forFrame:(WebFrame *)frame{
     NSLog(@"%s %@",__PRETTY_FUNCTION__,title);
-    if ([title isEqualToString:@"Web WeChat"]|| self.hasNew) {
+    if ([title hasSuffix:@")"]) {
+        NSString * badgeString = [[[[title componentsSeparatedByString:@"("] objectAtIndex:1] componentsSeparatedByString:@")"] firstObject];
+        if ([badgeString isEqualToString:[NSApp dockTile].badgeLabel]) {
+            return;
+        }else{
+            NSLog(@"%@",badgeString);
+            [NSApp dockTile].badgeLabel = badgeString;
+        }
+    }
+    if (![title hasSuffix:@")"]|| self.hasNew) {
         return;
     }
+    
     NSUserNotification *notification = [[NSUserNotification alloc] init];
     notification.title = @"小伙伴发来新的微信";
     notification.informativeText = title;
@@ -124,7 +135,6 @@
     
     [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
     self.hasNew = YES;
-    [NSApp setBadgeLabel:@"新消息"];
     
 }
 - (NSString * )cssStringWithFileName:(NSString *)filename{
