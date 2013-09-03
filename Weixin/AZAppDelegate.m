@@ -11,7 +11,7 @@
 #import "MASShortcut+Monitoring.h"
 #import "iTunes.h"
 #import "AZThemeManager.h"
-
+#import "NSButton+Style.h"
 
 @implementation AZAppDelegate
 
@@ -43,7 +43,7 @@
                       @selector(sheetDidEnd:returnCode:contextInfo:),
                       @selector(sheetDidDismiss:returnCode:contextInfo:),
                       (__bridge void *)(sender),
-                      @"虽然这个App很简单，但还是考虑赞助给Aladdin和他的12只猫猫吧");
+                      @"虽然这个App很简单，但还是考虑赞助给Aladdin和他的12只猫猫吧!如有建议和bug请联系微信号:Aladdin");
 }
 
 #pragma mark alertDelegate START
@@ -58,33 +58,33 @@
 #pragma mark alertDelegate END
 
 - (void)registerShortCuts{
-    MASShortcut *shortcut = [MASShortcut shortcutWithKeyCode:kVK_ANSI_Minus modifierFlags:NSCommandKeyMask|NSControlKeyMask];
+    MASShortcut *shortcut = [MASShortcut shortcutWithKeyCode:kVK_ANSI_O modifierFlags:NSCommandKeyMask|NSControlKeyMask];
     NSString *  _constantShortcutMonitor = [MASShortcut addGlobalHotkeyMonitorWithShortcut:shortcut handler:^{
+        [self.window orderFront:nil];
         [NSApp activateIgnoringOtherApps:YES];
         if([self.window isMiniaturized])
         {
             [self.window deminiaturize:self];
         }
+
     }];
     NSLog(@"%@",_constantShortcutMonitor);
 }
 
 - (void)addWeixinToolBar{
-//    self.toolBar.layer.backgroundColor = [NSColor colorWithDeviceRed:0.0
-//                                                               green:0
-//                                                                blue:0
-//                                                               alpha:1.0].CGColor;
-//    self.toolBar.layer.cornerRadius = 3;
     self.toolBar.alphaValue = 0.3;
     [self.toolBar addTrackingRect:self.toolBar.bounds owner:self userData:NULL assumeInside:YES];
-    
+    [self.sponsor setTitleColor:[NSColor colorWithDeviceWhite:1.0 alpha:0.8]];
+    [self.donate setTitleColor:[NSColor colorWithDeviceWhite:1.0 alpha:0.8]];
 }
 
 - (void)mouseEntered:(NSEvent *)theEvent{
     [[self.toolBar animator] setAlphaValue:0.7];
+    [[self.sponsor animator] setFrameSize:NSMakeSize(270,90)];
 }
 - (void)mouseExited:(NSEvent *)theEvent{
     [[self.toolBar animator] setAlphaValue:0.3];
+    [[self.sponsor animator] setFrameSize:NSMakeSize(90, 90)];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
@@ -106,6 +106,11 @@
 - (void)applicationWillBecomeActive:(NSNotification *)notification{
     self.hasNew = NO;
 }
+- (BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag{
+    [self.window orderFront:nil];
+    [NSApp activateIgnoringOtherApps:YES];
+    return YES;
+}
 #pragma mark WebFrameLoadDelegate START
 - (void)webView:(WebView *)sender didReceiveTitle:(NSString *)title forFrame:(WebFrame *)frame{
     NSLog(@"%s %@",__PRETTY_FUNCTION__,title);
@@ -119,6 +124,8 @@
     
     [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
     self.hasNew = YES;
+    [NSApp setBadgeLabel:@"新消息"];
+    
 }
 - (NSString * )cssStringWithFileName:(NSString *)filename{
     NSStringEncoding * encoding = NULL;
@@ -133,7 +140,7 @@
 
 - (void)changeBackground:(WebView *)sender {
 
-    NSString* css = [NSString stringWithFormat:@"\"body { background-image:url(%@);background-size:auto auto;} \"",[AZThemeManager sharedManager].currentBackground];
+    NSString* css = [NSString stringWithFormat:@"\"@media screen and (-webkit-min-device-pixel-ratio: 2), screen and (max--moz-device-pixel-ratio: 2){ body { background-image:url(%@)  no-repeat;background-size:auto auto;}} body { background-image:url(%@) no-repeat;background-size:auto auto;}\"",[AZThemeManager sharedManager].currentBackground,[AZThemeManager sharedManager].currentBackground];
     NSLog(@"css:\n %@",css);
     NSString* js = [NSString stringWithFormat:
                     @"var styleNode = document.createElement('style');\n"
@@ -142,7 +149,12 @@
                     "styleNode.appendChild(styleText);\n"
                     "document.getElementsByTagName('body')[0].appendChild(styleNode);\n",css];
     NSLog(@"js:\n%@",js);
-    [self.webView stringByEvaluatingJavaScriptFromString:js];
+    
+    NSString * js2 = [NSString stringWithFormat:@"$('body').css(\"background-image\",\"url(%@)\")",[AZThemeManager sharedManager].currentBackground];
+    [self.webView stringByEvaluatingJavaScriptFromString:js2];
+    
+//    NSString * js3 = [NSString stringWithFormat:@"$('body').css(\"background-size\",\"auto 100%%\")"];
+//    [self.webView stringByEvaluatingJavaScriptFromString:js3];
     
 }
 
@@ -156,7 +168,7 @@
 
 #pragma mark WebFrameLoadDelegate START
 - (id)webView:(WebView *)sender identifierForInitialRequest:(NSURLRequest *)request fromDataSource:(WebDataSource *)dataSource{
-//    NSLog(@"%@ %@ %@",sender,request,[[dataSource response] MIMEType]);
+    NSLog(@"%@ %@ %@",sender,request,[[dataSource response] MIMEType]);
     return dataSource;
 }
 #pragma mark WebFrameLoadDelegate END

@@ -41,6 +41,11 @@
       "idiom" : "mac",
       "filename" : "icon-256.png",
       "scale" : "1x"
+    },
+    {
+      "idiom" : "mac",
+      "size" : "256x256",
+      "scale" : "2x"
     }
   ],
   "info" : {

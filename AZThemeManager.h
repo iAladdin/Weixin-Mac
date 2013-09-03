@@ -11,15 +11,18 @@
 
 @interface AZThemeManager : NSObject{
     NSArray * _backgrounds;
+    NSArray * _themes;
     HTTPServer * _http;
     NSString * _localhostPath;
 }
-@property  NSInteger currentIndex;
+@property NSInteger currentIndex;
+@property NSInteger currentThemeIndex;
 @property (nonatomic,strong)    HTTPServer * http;
 @property (nonatomic,strong)    NSString * localhostPath;
 + (AZThemeManager *)sharedManager;
 - (void) actionToNext;
 - (void) actionToLast;
+- (void) actionToTheme:(NSInteger)themeID;
 - (NSString * ) currentBackground;
 - (NSInteger) countOfBackgrounds;
 @end
