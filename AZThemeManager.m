@@ -20,13 +20,14 @@ static AZThemeManager *_sharedInstance = nil;
 static const int ddLogLevel = LOG_ASYNC_VERBOSE;
 
 - (void)syncUserDefault{
+    [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%li",(long)self.currentThemeIndex] forKey:@"currentThemeIndex"];
     [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%li",(long)self.currentIndex] forKey:@"currentIndex"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 
 - (void) actionToNext{
-    if (self.currentIndex == [self countOfBackgrounds]-1) {
+    if (self.currentIndex >= [self countOfBackgrounds]-1) {
         self.currentIndex = 0;
         [self syncUserDefault];
         return;
@@ -44,6 +45,10 @@ static const int ddLogLevel = LOG_ASYNC_VERBOSE;
     self.currentIndex --;
     [self syncUserDefault];
     return;
+}
+
+- (void) actionToTheme:(NSInteger)themeID{
+    
 }
 - (NSString * ) currentBackground{
     return [_backgrounds objectAtIndex:self.currentIndex];
@@ -105,19 +110,10 @@ static const int ddLogLevel = LOG_ASYNC_VERBOSE;
     
     if (self) {
         [self initHttpServer];
-        
-        NSArray * themes = [[NSBundle mainBundle] pathsForResourcesOfType:@"bpack" inDirectory:nil];
-        
-        [self localizedBackgrounds:[themes objectAtIndex:0]];
-        
-        NSString * currentIndexStr = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentIndex"];
-        if (!currentIndexStr) {
-            currentIndexStr = @"0";
-            self.currentIndex = [currentIndexStr intValue];
-            [self syncUserDefault];
-        }
-        self.currentIndex = [currentIndexStr intValue];
-
+        _themes = [[NSBundle mainBundle] pathsForResourcesOfType:@"bpack" inDirectory:nil];
+        NSInteger currentThemeIndex = [[NSUserDefaults standardUserDefaults] integerForKey:@"currentThemeIndex"];
+        [self localizedBackgrounds:[_themes objectAtIndex:currentThemeIndex]];
+        self.currentIndex = [[NSUserDefaults standardUserDefaults] integerForKey:@"currentIndex"];
     }
     
     return self;

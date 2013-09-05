@@ -18,6 +18,8 @@
 		8315747D17A8BC3200EB5CE0 /* MASShortcutView+UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 8315747417A8BC3200EB5CE0 /* MASShortcutView+UserDefaults.m */; };
 		8315747E17A8BC3200EB5CE0 /* MASShortcutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8315747617A8BC3200EB5CE0 /* MASShortcutView.m */; };
 		8315747F17A8BC3200EB5CE0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8315747717A8BC3200EB5CE0 /* README.md */; };
+		835DE7B217D5B4E300430263 /* NSUserDefaults+IntValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 835DE7B117D5B4E300430263 /* NSUserDefaults+IntValue.m */; };
+		835DE7B717D6FE6500430263 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 835DE7B617D6FE6500430263 /* Sparkle.framework */; };
 		83676D8C17A64844008B88EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83676D8A17A64844008B88EF /* InfoPlist.strings */; };
 		83676D8E17A64844008B88EF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83676D8D17A64844008B88EF /* main.m */; };
 		83676D9217A64844008B88EF /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 83676D9017A64844008B88EF /* Credits.rtf */; };
@@ -33,8 +35,10 @@
 		8371A38D17CDED0C002DC13F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83676D8117A64844008B88EF /* Cocoa.framework */; };
 		8371A39017CDF5DA002DC13F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8371A38F17CDF5DA002DC13F /* Security.framework */; };
 		8371A39217CF5556002DC13F /* The_Garden_of_Words.bpack in Resources */ = {isa = PBXBuildFile; fileRef = 8371A39117CF5556002DC13F /* The_Garden_of_Words.bpack */; };
-		837230FC17ADD74600C37956 /* theme.css in Resources */ = {isa = PBXBuildFile; fileRef = 837230FB17ADD73900C37956 /* theme.css */; };
-		837230FE17ADD7CE00C37956 /* background.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 837230FD17ADD7CE00C37956 /* background.jpeg */; };
+		83845BD117D6FF7C00F1C6F9 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 835DE7B617D6FE6500430263 /* Sparkle.framework */; };
+		83845BD317D7002B00F1C6F9 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 83845BD217D7002B00F1C6F9 /* dsa_pub.pem */; };
+		83A3A72317D4AC940095426C /* NSButton+Style.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A3A72217D4AC940095426C /* NSButton+Style.m */; };
+		83ABF34317D06DDF00C00BDE /* xiaodao.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 83ABF34217D06DDF00C00BDE /* xiaodao.jpg */; };
 		83E5562117AA57B800872BD9 /* AZThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 832251AE17AA45FE0078694F /* AZThemeManager.m */; };
 		83F8066E17AF6FD1005A492B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 83F8055F17AF6FCF005A492B /* .gitignore */; };
 		83F8066F17AF6FD1005A492B /* .hgignore in Resources */ = {isa = PBXBuildFile; fileRef = 83F8056017AF6FCF005A492B /* .hgignore */; };
@@ -84,6 +88,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		83845BD017D6FF6B00F1C6F9 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				83845BD117D6FF7C00F1C6F9 /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		830D406A17AA0D9100ECA8A9 /* alipay-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alipay-logo.png"; sourceTree = "<group>"; };
 		830D407217AA23A000ECA8A9 /* left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left.png; sourceTree = "<group>"; };
@@ -104,6 +121,11 @@
 		8315748017A8C99500EB5CE0 /* iTunes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunes.h; sourceTree = SOURCE_ROOT; };
 		832251AD17AA45FE0078694F /* AZThemeManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AZThemeManager.h; path = ../AZThemeManager.h; sourceTree = "<group>"; };
 		832251AE17AA45FE0078694F /* AZThemeManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AZThemeManager.m; path = ../AZThemeManager.m; sourceTree = "<group>"; };
+		835DE7B017D5B4E300430263 /* NSUserDefaults+IntValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSUserDefaults+IntValue.h"; path = "Category/NSUserDefaults+IntValue.h"; sourceTree = "<group>"; };
+		835DE7B117D5B4E300430263 /* NSUserDefaults+IntValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSUserDefaults+IntValue.m"; path = "Category/NSUserDefaults+IntValue.m"; sourceTree = "<group>"; };
+		835DE7B317D5D08A00430263 /* Cats.bpack */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Cats.bpack; sourceTree = "<group>"; };
+		835DE7B517D5E40E00430263 /* local.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = local.js; sourceTree = "<group>"; };
+		835DE7B617D6FE6500430263 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		83676D7E17A64844008B88EF /* Weixin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weixin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83676D8117A64844008B88EF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		83676D8417A64844008B88EF /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -127,8 +149,10 @@
 		8371A38B17CDECD8002DC13F /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 		8371A38F17CDF5DA002DC13F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		8371A39117CF5556002DC13F /* The_Garden_of_Words.bpack */ = {isa = PBXFileReference; lastKnownFileType = folder; path = The_Garden_of_Words.bpack; sourceTree = "<group>"; };
-		837230FB17ADD73900C37956 /* theme.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = theme.css; sourceTree = "<group>"; };
-		837230FD17ADD7CE00C37956 /* background.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpeg; sourceTree = "<group>"; };
+		83845BD217D7002B00F1C6F9 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		83A3A72117D4AC940095426C /* NSButton+Style.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSButton+Style.h"; path = "Category/NSButton+Style.h"; sourceTree = "<group>"; };
+		83A3A72217D4AC940095426C /* NSButton+Style.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSButton+Style.m"; path = "Category/NSButton+Style.m"; sourceTree = "<group>"; };
+		83ABF34217D06DDF00C00BDE /* xiaodao.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = xiaodao.jpg; sourceTree = "<group>"; };
 		83EB85E017B3744C00B2574D /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		83F8055F17AF6FCF005A492B /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		83F8056017AF6FCF005A492B /* .hgignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .hgignore; sourceTree = "<group>"; };
@@ -206,6 +230,7 @@
 			files = (
 				8371A39017CDF5DA002DC13F /* Security.framework in Frameworks */,
 				8371A38D17CDED0C002DC13F /* Cocoa.framework in Frameworks */,
+				835DE7B717D6FE6500430263 /* Sparkle.framework in Frameworks */,
 				8371A38C17CDECD8002DC13F /* libxml2.2.dylib in Frameworks */,
 				83676DB617A65DC5008B88EF /* WebKit.framework in Frameworks */,
 			);
@@ -265,6 +290,7 @@
 		83676D8017A64844008B88EF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				835DE7B617D6FE6500430263 /* Sparkle.framework */,
 				8371A38F17CDF5DA002DC13F /* Security.framework */,
 				8371A38B17CDECD8002DC13F /* libxml2.2.dylib */,
 				83EB85E017B3744C00B2574D /* libxml2.dylib */,
@@ -289,6 +315,7 @@
 		83676D8717A64844008B88EF /* Weixin */ = {
 			isa = PBXGroup;
 			children = (
+				83A3A72017D4AC5F0095426C /* Category */,
 				8371A38E17CDEDBA002DC13F /* Extension */,
 				832251AD17AA45FE0078694F /* AZThemeManager.h */,
 				832251AE17AA45FE0078694F /* AZThemeManager.m */,
@@ -308,14 +335,16 @@
 		83676D8817A64844008B88EF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				83845BD217D7002B00F1C6F9 /* dsa_pub.pem */,
+				835DE7B317D5D08A00430263 /* Cats.bpack */,
+				83ABF34217D06DDF00C00BDE /* xiaodao.jpg */,
 				8371A39117CF5556002DC13F /* The_Garden_of_Words.bpack */,
 				83676D8917A64844008B88EF /* Weixin-Info.plist */,
 				83676D8A17A64844008B88EF /* InfoPlist.strings */,
 				83676D8D17A64844008B88EF /* main.m */,
 				83676D8F17A64844008B88EF /* Weixin-Prefix.pch */,
 				83676D9017A64844008B88EF /* Credits.rtf */,
-				837230FB17ADD73900C37956 /* theme.css */,
-				837230FD17ADD7CE00C37956 /* background.jpeg */,
+				835DE7B517D5E40E00430263 /* local.js */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -345,6 +374,17 @@
 				8315746A17A8BC3200EB5CE0 /* MASShortcut */,
 			);
 			name = Extension;
+			sourceTree = "<group>";
+		};
+		83A3A72017D4AC5F0095426C /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				83A3A72117D4AC940095426C /* NSButton+Style.h */,
+				83A3A72217D4AC940095426C /* NSButton+Style.m */,
+				835DE7B017D5B4E300430263 /* NSUserDefaults+IntValue.h */,
+				835DE7B117D5B4E300430263 /* NSUserDefaults+IntValue.m */,
+			);
+			name = Category;
 			sourceTree = "<group>";
 		};
 		83F8055E17AF6FCF005A492B /* CocoaHTTPServer */ = {
@@ -511,6 +551,7 @@
 				83676D7A17A64844008B88EF /* Sources */,
 				83676D7B17A64844008B88EF /* Frameworks */,
 				83676D7C17A64844008B88EF /* Resources */,
+				83845BD017D6FF6B00F1C6F9 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -584,16 +625,16 @@
 				830D406B17AA0D9100ECA8A9 /* alipay-logo.png in Resources */,
 				83F806E417AF6FD1005A492B /* About.txt in Resources */,
 				830D407517AA23A800ECA8A9 /* right.png in Resources */,
+				83845BD317D7002B00F1C6F9 /* dsa_pub.pem in Resources */,
 				8315747817A8BC3200EB5CE0 /* .gitignore in Resources */,
 				83F806E217AF6FD1005A492B /* About.txt in Resources */,
 				83676D8C17A64844008B88EF /* InfoPlist.strings in Resources */,
 				83F8066F17AF6FD1005A492B /* .hgignore in Resources */,
-				837230FE17ADD7CE00C37956 /* background.jpeg in Resources */,
 				8315747F17A8BC3200EB5CE0 /* README.md in Resources */,
 				830D407317AA23A000ECA8A9 /* left.png in Resources */,
 				83F8066E17AF6FD1005A492B /* .gitignore in Resources */,
+				83ABF34317D06DDF00C00BDE /* xiaodao.jpg in Resources */,
 				83676D9A17A64844008B88EF /* Images.xcassets in Resources */,
-				837230FC17ADD74600C37956 /* theme.css in Resources */,
 				8371A39217CF5556002DC13F /* The_Garden_of_Words.bpack in Resources */,
 				83F8068517AF6FD1005A492B /* LICENSE.txt in Resources */,
 				83676D9217A64844008B88EF /* Credits.rtf in Resources */,
@@ -646,7 +687,9 @@
 				83676D9517A64844008B88EF /* AZAppDelegate.m in Sources */,
 				83F806E917AF6FD1005A492B /* DDTTYLogger.m in Sources */,
 				83F8067117AF6FD1005A492B /* DDNumber.m in Sources */,
+				835DE7B217D5B4E300430263 /* NSUserDefaults+IntValue.m in Sources */,
 				83F806E717AF6FD1005A492B /* DDFileLogger.m in Sources */,
+				83A3A72317D4AC940095426C /* NSButton+Style.m in Sources */,
 				8315747A17A8BC3200EB5CE0 /* MASShortcut+Monitoring.m in Sources */,
 				83F8067D17AF6FD1005A492B /* HTTPErrorResponse.m in Sources */,
 				83F8067B17AF6FD1005A492B /* HTTPDataResponse.m in Sources */,
@@ -788,6 +831,10 @@
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Workspace/Mac/Weixin,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Weixin/Weixin-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -806,6 +853,10 @@
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Workspace/Mac/Weixin,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Weixin/Weixin-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
