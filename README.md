@@ -17,15 +17,17 @@ Weixin-Mac
 
 捐赠感谢名单(按捐赠时间顺序,如果需要删除的小伙伴可以在捐赠的时候附加上匿名=D )
 
-
-1. xiarong
-2. fenng
-
-
-
-
-
-
-August-Early
-
-Download: https://github.com/iAladdin/Weixin-Mac/archive/August-Early.zip
+1. lixiarong
+2. fengdahui
+3. huangyan
+4. wujinchuan
+5. linli
+6. zhangyongxiang
+7. zhenghao
+8. zhangxin
+9. zhangjunya
+10. zhangshaozhi
+ 
+Latest:
+September Early
+http://ialaddin.github.io/Weixin-Mac/Weixin-September-Early.zip

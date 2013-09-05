@@ -81,7 +81,7 @@ static const int ddLogLevel = LOG_ASYNC_VERBOSE;
     [self.http setPort:port];
     
     NSString *docRoot = [[[NSBundle mainBundle] bundlePath] stringByExpandingTildeInPath];
-    NSLog(@"Setting document root: %@", docRoot);
+    DLog(@"Setting document root: %@", docRoot);
     [self.http setDocumentRoot:docRoot];
     
     NSError *error = nil;

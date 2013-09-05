@@ -68,7 +68,7 @@
         }
 
     }];
-    NSLog(@"%@",_constantShortcutMonitor);
+    DLog(@"%@",_constantShortcutMonitor);
 }
 
 - (void)addWeixinToolBar{
@@ -114,13 +114,13 @@
 }
 #pragma mark WebFrameLoadDelegate START
 - (void)webView:(WebView *)sender didReceiveTitle:(NSString *)title forFrame:(WebFrame *)frame{
-    NSLog(@"%s %@",__PRETTY_FUNCTION__,title);
+    DLog(@"%s %@",__PRETTY_FUNCTION__,title);
     if ([title hasSuffix:@")"]) {
         NSString * badgeString = [[[[title componentsSeparatedByString:@"("] objectAtIndex:1] componentsSeparatedByString:@")"] firstObject];
         if ([badgeString isEqualToString:[NSApp dockTile].badgeLabel]) {
             return;
         }else{
-            NSLog(@"%@",badgeString);
+            DLog(@"%@",badgeString);
             [NSApp dockTile].badgeLabel = badgeString;
         }
     }
@@ -151,14 +151,14 @@
 - (void)changeBackground:(WebView *)sender {
 
     NSString* css = [NSString stringWithFormat:@"\"@media screen and (-webkit-min-device-pixel-ratio: 2), screen and (max--moz-device-pixel-ratio: 2){ body { background-image:url(%@)  no-repeat;background-size:auto auto;}} body { background-image:url(%@) no-repeat;background-size:auto auto;}\"",[AZThemeManager sharedManager].currentBackground,[AZThemeManager sharedManager].currentBackground];
-    NSLog(@"css:\n %@",css);
+    DLog(@"css:\n %@",css);
     NSString* js = [NSString stringWithFormat:
                     @"var styleNode = document.createElement('style');\n"
                     "styleNode.type = \"text/css\";\n"
                     "var styleText = document.createTextNode(%@);\n"
                     "styleNode.appendChild(styleText);\n"
                     "document.getElementsByTagName('body')[0].appendChild(styleNode);\n",css];
-    NSLog(@"js:\n%@",js);
+    DLog(@"js:\n%@",js);
     
     NSString * js2 = [NSString stringWithFormat:@"$('body').css(\"background-image\",\"url(%@)\")",[AZThemeManager sharedManager].currentBackground];
     [self.webView stringByEvaluatingJavaScriptFromString:js2];
@@ -169,7 +169,7 @@
 }
 
 - (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame{
-    NSLog(@"%@",[sender stringByEvaluatingJavaScriptFromString:@"$(\".footer\").hide()"]);
+    DLog(@"%@",[sender stringByEvaluatingJavaScriptFromString:@"$(\".footer\").hide()"]);
     
     [self changeBackground:sender];
 }
@@ -178,7 +178,7 @@
 
 #pragma mark WebFrameLoadDelegate START
 - (id)webView:(WebView *)sender identifierForInitialRequest:(NSURLRequest *)request fromDataSource:(WebDataSource *)dataSource{
-    NSLog(@"%@ %@ %@",sender,request,[[dataSource response] MIMEType]);
+    DLog(@"%@ %@ %@",sender,request,[[dataSource response] MIMEType]);
     return dataSource;
 }
 #pragma mark WebFrameLoadDelegate END
@@ -212,7 +212,7 @@
         request:(NSURLRequest *)request
    newFrameName:(NSString *)frameName
 decisionListener:(id<WebPolicyDecisionListener>)listener{
-    NSLog(@"%s %@ \n %@ \n %@",__PRETTY_FUNCTION__,actionInformation,request,frameName);
+    DLog(@"%s %@ \n %@ \n %@",__PRETTY_FUNCTION__,actionInformation,request,frameName);
     [[NSWorkspace sharedWorkspace] openURL:[request URL]];
 }
 #pragma mark WebPolicyDelegate END
