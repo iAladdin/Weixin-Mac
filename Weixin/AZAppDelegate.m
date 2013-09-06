@@ -147,7 +147,11 @@
     
     return cssString;
 }
-
+- (void)loadLocalJavaScript:(WebView * )sender{
+    NSString * js = [NSString stringWithFormat:@"$.getScript('http://%@local.js',function(){newFun('\"Checking new script\"');})",[AZThemeManager sharedManager].localhostPath];
+    
+    [sender stringByEvaluatingJavaScriptFromString:js];
+}
 - (void)changeBackground:(WebView *)sender {
 
     NSString* css = [NSString stringWithFormat:@"\"@media screen and (-webkit-min-device-pixel-ratio: 2), screen and (max--moz-device-pixel-ratio: 2){ body { background-image:url(%@)  no-repeat;background-size:auto auto;}} body { background-image:url(%@) no-repeat;background-size:auto auto;}\"",[AZThemeManager sharedManager].currentBackground,[AZThemeManager sharedManager].currentBackground];
@@ -172,6 +176,7 @@
     DLog(@"%@",[sender stringByEvaluatingJavaScriptFromString:@"$(\".footer\").hide()"]);
     
     [self changeBackground:sender];
+    [self loadLocalJavaScript:sender];
 }
 
 #pragma mark WebFrameLoadDelegate END

@@ -18,6 +18,7 @@
 		8315747D17A8BC3200EB5CE0 /* MASShortcutView+UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 8315747417A8BC3200EB5CE0 /* MASShortcutView+UserDefaults.m */; };
 		8315747E17A8BC3200EB5CE0 /* MASShortcutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8315747617A8BC3200EB5CE0 /* MASShortcutView.m */; };
 		8315747F17A8BC3200EB5CE0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8315747717A8BC3200EB5CE0 /* README.md */; };
+		832643D317D9CF130080228D /* local.js in Resources */ = {isa = PBXBuildFile; fileRef = 835DE7B517D5E40E00430263 /* local.js */; };
 		835DE7B217D5B4E300430263 /* NSUserDefaults+IntValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 835DE7B117D5B4E300430263 /* NSUserDefaults+IntValue.m */; };
 		835DE7B717D6FE6500430263 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 835DE7B617D6FE6500430263 /* Sparkle.framework */; };
 		83676D8C17A64844008B88EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83676D8A17A64844008B88EF /* InfoPlist.strings */; };
@@ -620,6 +621,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				832643D317D9CF130080228D /* local.js in Resources */,
 				83F806EC17AF6FD1005A492B /* README.txt in Resources */,
 				8315747917A8BC3200EB5CE0 /* LICENSE in Resources */,
 				830D406B17AA0D9100ECA8A9 /* alipay-logo.png in Resources */,
