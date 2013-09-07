@@ -31,6 +31,7 @@
 		83845BD117D6FF7C00F1C6F9 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 835DE7B617D6FE6500430263 /* Sparkle.framework */; };
 		83845BD317D7002B00F1C6F9 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 83845BD217D7002B00F1C6F9 /* dsa_pub.pem */; };
 		83A3A72317D4AC940095426C /* NSButton+Style.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A3A72217D4AC940095426C /* NSButton+Style.m */; };
+		83A84C3C17DABECC00DB04D1 /* AZLocalScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A84C3B17DABECC00DB04D1 /* AZLocalScript.m */; };
 		83ABF34317D06DDF00C00BDE /* xiaodao.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 83ABF34217D06DDF00C00BDE /* xiaodao.jpg */; };
 		83E5562117AA57B800872BD9 /* AZThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 832251AE17AA45FE0078694F /* AZThemeManager.m */; };
 		862BAF2955A640FBB2499DE7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7863336A41414C69A30CF151 /* libPods.a */; };
@@ -98,6 +99,8 @@
 		83845BD217D7002B00F1C6F9 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		83A3A72117D4AC940095426C /* NSButton+Style.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSButton+Style.h"; path = "Category/NSButton+Style.h"; sourceTree = "<group>"; };
 		83A3A72217D4AC940095426C /* NSButton+Style.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSButton+Style.m"; path = "Category/NSButton+Style.m"; sourceTree = "<group>"; };
+		83A84C3A17DABECC00DB04D1 /* AZLocalScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZLocalScript.h; sourceTree = "<group>"; };
+		83A84C3B17DABECC00DB04D1 /* AZLocalScript.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZLocalScript.m; sourceTree = "<group>"; };
 		83ABF34217D06DDF00C00BDE /* xiaodao.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = xiaodao.jpg; sourceTree = "<group>"; };
 		83EB85E017B3744C00B2574D /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		F49FE4F9476A479ABA5F6C92 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
@@ -180,6 +183,8 @@
 			children = (
 				83A3A72017D4AC5F0095426C /* Category */,
 				832251AD17AA45FE0078694F /* AZThemeManager.h */,
+				83A84C3A17DABECC00DB04D1 /* AZLocalScript.h */,
+				83A84C3B17DABECC00DB04D1 /* AZLocalScript.m */,
 				832251AE17AA45FE0078694F /* AZThemeManager.m */,
 				83676D9317A64844008B88EF /* AZAppDelegate.h */,
 				83676D9417A64844008B88EF /* AZAppDelegate.m */,
@@ -384,6 +389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83E5562117AA57B800872BD9 /* AZThemeManager.m in Sources */,
+				83A84C3C17DABECC00DB04D1 /* AZLocalScript.m in Sources */,
 				83676D8E17A64844008B88EF /* main.m in Sources */,
 				83676D9517A64844008B88EF /* AZAppDelegate.m in Sources */,
 				835DE7B217D5B4E300430263 /* NSUserDefaults+IntValue.m in Sources */,

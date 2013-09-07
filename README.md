@@ -27,6 +27,8 @@ Weixin-Mac
 8. zhangxin
 9. zhangjunya
 10. zhangshaozhi
+11. panzicong
+12. wukaifeng
  
 Latest:
 September Early

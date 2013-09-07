@@ -1,6 +1,0 @@
-[submodule "MASShortcut"]
-	path = MASShortcut
-	url = git://github.com/shpakovski/MASShortcut.git
-[submodule "CocoaHTTPServer"]
-	path = CocoaHTTPServer
-	url = git@github.com:iAladdin/CocoaHTTPServer.git
