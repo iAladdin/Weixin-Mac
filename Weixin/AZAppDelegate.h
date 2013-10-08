@@ -8,9 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 #import <WebKit/WebKit.h>
-@class  HTTPServer;
 @interface AZAppDelegate : NSObject <NSApplicationDelegate,NSUserNotificationCenterDelegate>{
-    HTTPServer * httpServer;
+    NSPanel * _imagePanel;
 }
 
 @property (assign) IBOutlet NSWindow *window;

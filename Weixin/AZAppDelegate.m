@@ -12,7 +12,7 @@
 #import "iTunes.h"
 #import "AZThemeManager.h"
 #import "NSButton+Style.h"
-
+#import "AZLocalScript.h"
 @implementation AZAppDelegate
 
 
@@ -81,10 +81,14 @@
 - (void)mouseEntered:(NSEvent *)theEvent{
     [[self.toolBar animator] setAlphaValue:0.7];
     [[self.sponsor animator] setFrameSize:NSMakeSize(270,90)];
+    [[self.toolBar animator] setFrameOrigin:NSMakePoint(0,0)];
+    NSLog(@"%@",NSStringFromPoint(self.toolBar.frame.origin));
 }
 - (void)mouseExited:(NSEvent *)theEvent{
     [[self.toolBar animator] setAlphaValue:0.3];
     [[self.sponsor animator] setFrameSize:NSMakeSize(90, 90)];
+    [[self.toolBar animator] setFrameOrigin:NSMakePoint(0, -70)];
+    NSLog(@"%@",NSStringFromPoint(self.toolBar.frame.origin));
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
@@ -116,7 +120,7 @@
 - (void)webView:(WebView *)sender didReceiveTitle:(NSString *)title forFrame:(WebFrame *)frame{
     DLog(@"%s %@",__PRETTY_FUNCTION__,title);
     if ([title hasSuffix:@")"]) {
-        NSString * badgeString = [[[[title componentsSeparatedByString:@"("] objectAtIndex:1] componentsSeparatedByString:@")"] firstObject];
+        NSString * badgeString = [[[[title componentsSeparatedByString:@"("] objectAtIndex:1] componentsSeparatedByString:@")"] objectAtIndex:0];
         if ([badgeString isEqualToString:[NSApp dockTile].badgeLabel]) {
             return;
         }else{
@@ -177,6 +181,10 @@
     
     [self changeBackground:sender];
     [self loadLocalJavaScript:sender];
+    AZLocalScript * localScript = [AZLocalScript scriptWithLocalFileName:@"local.js"];
+    WebScriptObject * win =  sender.windowScriptObject;
+    [win setValue:localScript forKey:@"localScript"];
+    
 }
 
 #pragma mark WebFrameLoadDelegate END
