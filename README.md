@@ -61,6 +61,16 @@ Cocoapods 0.24.0
 10. zhangshaozhi
 11. panzicong
 12. wukaifeng
+13. liziqi
+14. beijingminuowuxiankejiyouxiangongsi
+15. heliang
+16. lijingjun
+17. chenzhongming
+18. zhaoqing
+19. wulei
+20. wenying
+21. hanchengyue
+22. shenmengyao
  
 Latest:
 September Early
