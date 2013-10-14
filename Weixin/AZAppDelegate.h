@@ -8,9 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 #import <WebKit/WebKit.h>
-@class  HTTPServer;
 @interface AZAppDelegate : NSObject <NSApplicationDelegate,NSUserNotificationCenterDelegate>{
-    HTTPServer * httpServer;
+    NSPanel * _imagePanel;
 }
 
 @property (assign) IBOutlet NSWindow *window;
@@ -25,5 +24,6 @@
 - (IBAction)donateToAladdin:(id)sender;
 - (IBAction)nextBackground:(id)sender;
 - (IBAction)lastBackground:(id)sender;
+- (IBAction)reloadWX:(id)sender;
 
 @end

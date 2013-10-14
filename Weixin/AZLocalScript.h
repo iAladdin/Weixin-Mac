@@ -8,6 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AZLocalScript : NSObject
+@interface AZLocalScript : NSObject{
+    NSString * _url;
+}
+@property (nonatomic,strong) NSString * url;
 
+
++(id)scriptWithLocalFileName:(NSString * )fileName;
+
+
+#pragma mark --
+#pragma mark for JS
+- (void)testFoo:(NSString *) string;
+- (void)getImageUrl:(NSString *) urlString withCookie:(NSString *) cookieString;
+#pragma mark --
 @end

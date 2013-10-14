@@ -11,6 +11,7 @@
 		830D407317AA23A000ECA8A9 /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = 830D407217AA23A000ECA8A9 /* left.png */; };
 		830D407517AA23A800ECA8A9 /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = 830D407417AA23A800ECA8A9 /* right.png */; };
 		832643D317D9CF130080228D /* local.js in Resources */ = {isa = PBXBuildFile; fileRef = 835DE7B517D5E40E00430263 /* local.js */; };
+		8332204217E856F100679DFD /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8332204117E856F100679DFD /* ScriptingBridge.framework */; };
 		835DE7B217D5B4E300430263 /* NSUserDefaults+IntValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 835DE7B117D5B4E300430263 /* NSUserDefaults+IntValue.m */; };
 		835DE7B717D6FE6500430263 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 835DE7B617D6FE6500430263 /* Sparkle.framework */; };
 		83676D8C17A64844008B88EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83676D8A17A64844008B88EF /* InfoPlist.strings */; };
@@ -18,7 +19,6 @@
 		83676D9217A64844008B88EF /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 83676D9017A64844008B88EF /* Credits.rtf */; };
 		83676D9517A64844008B88EF /* AZAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83676D9417A64844008B88EF /* AZAppDelegate.m */; };
 		83676D9817A64844008B88EF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83676D9617A64844008B88EF /* MainMenu.xib */; };
-		83676D9A17A64844008B88EF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83676D9917A64844008B88EF /* Images.xcassets */; };
 		83676DA117A64844008B88EF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83676DA017A64844008B88EF /* XCTest.framework */; };
 		83676DA217A64844008B88EF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83676D8117A64844008B88EF /* Cocoa.framework */; };
 		83676DAA17A64844008B88EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83676DA817A64844008B88EF /* InfoPlist.strings */; };
@@ -30,9 +30,11 @@
 		8371A39217CF5556002DC13F /* The_Garden_of_Words.bpack in Resources */ = {isa = PBXBuildFile; fileRef = 8371A39117CF5556002DC13F /* The_Garden_of_Words.bpack */; };
 		83845BD117D6FF7C00F1C6F9 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 835DE7B617D6FE6500430263 /* Sparkle.framework */; };
 		83845BD317D7002B00F1C6F9 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 83845BD217D7002B00F1C6F9 /* dsa_pub.pem */; };
+		83A2A31D17DDCD4A004ED36A /* NSImage+File.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A2A31C17DDCD4A004ED36A /* NSImage+File.m */; };
 		83A3A72317D4AC940095426C /* NSButton+Style.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A3A72217D4AC940095426C /* NSButton+Style.m */; };
 		83A84C3C17DABECC00DB04D1 /* AZLocalScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A84C3B17DABECC00DB04D1 /* AZLocalScript.m */; };
 		83ABF34317D06DDF00C00BDE /* xiaodao.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 83ABF34217D06DDF00C00BDE /* xiaodao.jpg */; };
+		83DA673F1805282F008C19C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83DA673E1805282F008C19C7 /* Images.xcassets */; };
 		83E5562117AA57B800872BD9 /* AZThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 832251AE17AA45FE0078694F /* AZThemeManager.m */; };
 		862BAF2955A640FBB2499DE7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7863336A41414C69A30CF151 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -68,6 +70,7 @@
 		8315748017A8C99500EB5CE0 /* iTunes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunes.h; sourceTree = SOURCE_ROOT; };
 		832251AD17AA45FE0078694F /* AZThemeManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AZThemeManager.h; path = ../AZThemeManager.h; sourceTree = "<group>"; };
 		832251AE17AA45FE0078694F /* AZThemeManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AZThemeManager.m; path = ../AZThemeManager.m; sourceTree = "<group>"; };
+		8332204117E856F100679DFD /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		835DE7B017D5B4E300430263 /* NSUserDefaults+IntValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSUserDefaults+IntValue.h"; path = "Category/NSUserDefaults+IntValue.h"; sourceTree = "<group>"; };
 		835DE7B117D5B4E300430263 /* NSUserDefaults+IntValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSUserDefaults+IntValue.m"; path = "Category/NSUserDefaults+IntValue.m"; sourceTree = "<group>"; };
 		835DE7B317D5D08A00430263 /* Cats.bpack */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Cats.bpack; sourceTree = "<group>"; };
@@ -86,7 +89,6 @@
 		83676D9317A64844008B88EF /* AZAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AZAppDelegate.h; sourceTree = "<group>"; };
 		83676D9417A64844008B88EF /* AZAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AZAppDelegate.m; sourceTree = "<group>"; };
 		83676D9717A64844008B88EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		83676D9917A64844008B88EF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		83676D9F17A64844008B88EF /* WeixinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeixinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83676DA017A64844008B88EF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		83676DA717A64844008B88EF /* WeixinTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WeixinTests-Info.plist"; sourceTree = "<group>"; };
@@ -97,11 +99,14 @@
 		8371A38F17CDF5DA002DC13F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		8371A39117CF5556002DC13F /* The_Garden_of_Words.bpack */ = {isa = PBXFileReference; lastKnownFileType = folder; path = The_Garden_of_Words.bpack; sourceTree = "<group>"; };
 		83845BD217D7002B00F1C6F9 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		83A2A31B17DDCD4A004ED36A /* NSImage+File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSImage+File.h"; path = "Category/NSImage+File.h"; sourceTree = "<group>"; };
+		83A2A31C17DDCD4A004ED36A /* NSImage+File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSImage+File.m"; path = "Category/NSImage+File.m"; sourceTree = "<group>"; };
 		83A3A72117D4AC940095426C /* NSButton+Style.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSButton+Style.h"; path = "Category/NSButton+Style.h"; sourceTree = "<group>"; };
 		83A3A72217D4AC940095426C /* NSButton+Style.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSButton+Style.m"; path = "Category/NSButton+Style.m"; sourceTree = "<group>"; };
 		83A84C3A17DABECC00DB04D1 /* AZLocalScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZLocalScript.h; sourceTree = "<group>"; };
 		83A84C3B17DABECC00DB04D1 /* AZLocalScript.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZLocalScript.m; sourceTree = "<group>"; };
 		83ABF34217D06DDF00C00BDE /* xiaodao.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = xiaodao.jpg; sourceTree = "<group>"; };
+		83DA673E1805282F008C19C7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		83EB85E017B3744C00B2574D /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		F49FE4F9476A479ABA5F6C92 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8332204217E856F100679DFD /* ScriptingBridge.framework in Frameworks */,
 				8371A39017CDF5DA002DC13F /* Security.framework in Frameworks */,
 				8371A38D17CDED0C002DC13F /* Cocoa.framework in Frameworks */,
 				835DE7B717D6FE6500430263 /* Sparkle.framework in Frameworks */,
@@ -155,6 +161,7 @@
 		83676D8017A64844008B88EF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8332204117E856F100679DFD /* ScriptingBridge.framework */,
 				835DE7B617D6FE6500430263 /* Sparkle.framework */,
 				8371A38F17CDF5DA002DC13F /* Security.framework */,
 				8371A38B17CDECD8002DC13F /* libxml2.2.dylib */,
@@ -190,10 +197,10 @@
 				83676D9417A64844008B88EF /* AZAppDelegate.m */,
 				83676D9617A64844008B88EF /* MainMenu.xib */,
 				8315748017A8C99500EB5CE0 /* iTunes.h */,
-				83676D9917A64844008B88EF /* Images.xcassets */,
 				830D406A17AA0D9100ECA8A9 /* alipay-logo.png */,
 				830D407217AA23A000ECA8A9 /* left.png */,
 				830D407417AA23A800ECA8A9 /* right.png */,
+				83DA673E1805282F008C19C7 /* Images.xcassets */,
 				83676D8817A64844008B88EF /* Supporting Files */,
 			);
 			path = Weixin;
@@ -241,6 +248,8 @@
 				83A3A72217D4AC940095426C /* NSButton+Style.m */,
 				835DE7B017D5B4E300430263 /* NSUserDefaults+IntValue.h */,
 				835DE7B117D5B4E300430263 /* NSUserDefaults+IntValue.m */,
+				83A2A31B17DDCD4A004ED36A /* NSImage+File.h */,
+				83A2A31C17DDCD4A004ED36A /* NSImage+File.m */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -330,10 +339,10 @@
 				830D406B17AA0D9100ECA8A9 /* alipay-logo.png in Resources */,
 				830D407517AA23A800ECA8A9 /* right.png in Resources */,
 				83845BD317D7002B00F1C6F9 /* dsa_pub.pem in Resources */,
+				83DA673F1805282F008C19C7 /* Images.xcassets in Resources */,
 				83676D8C17A64844008B88EF /* InfoPlist.strings in Resources */,
 				830D407317AA23A000ECA8A9 /* left.png in Resources */,
 				83ABF34317D06DDF00C00BDE /* xiaodao.jpg in Resources */,
-				83676D9A17A64844008B88EF /* Images.xcassets in Resources */,
 				8371A39217CF5556002DC13F /* The_Garden_of_Words.bpack in Resources */,
 				83676D9217A64844008B88EF /* Credits.rtf in Resources */,
 				83676D9817A64844008B88EF /* MainMenu.xib in Resources */,
@@ -388,6 +397,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83A2A31D17DDCD4A004ED36A /* NSImage+File.m in Sources */,
 				83E5562117AA57B800872BD9 /* AZThemeManager.m in Sources */,
 				83A84C3C17DABECC00DB04D1 /* AZLocalScript.m in Sources */,
 				83676D8E17A64844008B88EF /* main.m in Sources */,
