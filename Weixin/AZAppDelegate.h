@@ -24,5 +24,6 @@
 - (IBAction)donateToAladdin:(id)sender;
 - (IBAction)nextBackground:(id)sender;
 - (IBAction)lastBackground:(id)sender;
+- (IBAction)reloadWX:(id)sender;
 
 @end

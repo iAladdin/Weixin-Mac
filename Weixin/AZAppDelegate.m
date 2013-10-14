@@ -45,7 +45,9 @@
                       (__bridge void *)(sender),
                       @"虽然这个App很简单，但还是考虑赞助给Aladdin和他的12只猫猫吧!如有建议和bug请联系微信号:Aladdin");
 }
-
+- (IBAction)reloadWX:(id)sender{
+    [self.webView.mainFrame reloadFromOrigin];
+}
 #pragma mark alertDelegate START
 - (void)sheetDidEnd:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo{
     if (returnCode == NSAlertDefaultReturn){
@@ -82,13 +84,11 @@
     [[self.toolBar animator] setAlphaValue:0.7];
     [[self.sponsor animator] setFrameSize:NSMakeSize(270,90)];
     [[self.toolBar animator] setFrameOrigin:NSMakePoint(0,0)];
-    NSLog(@"%@",NSStringFromPoint(self.toolBar.frame.origin));
 }
 - (void)mouseExited:(NSEvent *)theEvent{
     [[self.toolBar animator] setAlphaValue:0.3];
     [[self.sponsor animator] setFrameSize:NSMakeSize(90, 90)];
     [[self.toolBar animator] setFrameOrigin:NSMakePoint(0, -70)];
-    NSLog(@"%@",NSStringFromPoint(self.toolBar.frame.origin));
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
