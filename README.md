@@ -71,6 +71,18 @@ Cocoapods 0.24.0
 20. wenying
 21. hanchengyue
 22. shenmengyao
+23. *依尔
+24. *俊
+25. *正清
+26. *凯华
+27. *阳
+28. *为任
+29. *兆悦
+30. *昌圣
+31. *贺
+32. *建兰
+33. *伟
+34. *云涛
  
 Latest:
 September Early
