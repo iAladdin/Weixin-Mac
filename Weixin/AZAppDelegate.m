@@ -7,8 +7,8 @@
 //
 
 #import "AZAppDelegate.h"
-#import "MASShortcut.h"
-#import "MASShortcut+Monitoring.h"
+#import <MASShortcut/Shortcut.h>
+#import "AZWebView.h"
 #import "iTunes.h"
 #import "AZThemeManager.h"
 #import "NSButton+Style.h"
@@ -60,34 +60,28 @@
 #pragma mark alertDelegate END
 
 - (void)registerShortCuts{
-    MASShortcut *shortcut = [MASShortcut shortcutWithKeyCode:kVK_ANSI_O modifierFlags:NSCommandKeyMask|NSControlKeyMask];
-    NSString *  _constantShortcutMonitor = [MASShortcut addGlobalHotkeyMonitorWithShortcut:shortcut handler:^{
-        [self.window orderFront:nil];
-        [NSApp activateIgnoringOtherApps:YES];
-        if([self.window isMiniaturized])
-        {
-            [self.window deminiaturize:self];
-        }
-
-    }];
-    DLog(@"%@",_constantShortcutMonitor);
+    MASShortcut *shortcut = [MASShortcut shortcutWithKeyCode:kVK_ANSI_X modifierFlags:NSEventModifierFlagCommand|NSEventModifierFlagControl];
+        [[MASShortcutMonitor sharedMonitor] registerShortcut:shortcut withAction:^{
+            [self.window orderFront:nil];
+            [NSApp activateIgnoringOtherApps:YES];
+            if([self.window isMiniaturized])
+            {
+                [self.window deminiaturize:self];
+            }
+        }];
 }
 
 - (void)addWeixinToolBar{
     self.toolBar.alphaValue = 0.3;
     [self.toolBar addTrackingRect:self.toolBar.bounds owner:self userData:NULL assumeInside:YES];
-    [self.sponsor setTitleColor:[NSColor colorWithDeviceWhite:1.0 alpha:0.8]];
-    [self.donate setTitleColor:[NSColor colorWithDeviceWhite:1.0 alpha:0.8]];
 }
 
 - (void)mouseEntered:(NSEvent *)theEvent{
     [[self.toolBar animator] setAlphaValue:0.7];
-    [[self.sponsor animator] setFrameSize:NSMakeSize(270,90)];
     [[self.toolBar animator] setFrameOrigin:NSMakePoint(0,0)];
 }
 - (void)mouseExited:(NSEvent *)theEvent{
     [[self.toolBar animator] setAlphaValue:0.3];
-    [[self.sponsor animator] setFrameSize:NSMakeSize(90, 90)];
     [[self.toolBar animator] setFrameOrigin:NSMakePoint(0, -70)];
 }
 
@@ -100,7 +94,7 @@
     [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
     [self registerShortCuts];
     NSURLRequest *request = [NSURLRequest requestWithURL:
-                             [NSURL URLWithString:@"http://wx.qq.com/?lang=zh_CN"]];
+                             [NSURL URLWithString:@"https://web.wechat.com/?lang=zh_CN"]];
     [self.webView.mainFrame loadRequest:request];
     [self addWeixinToolBar];
     
@@ -177,6 +171,10 @@
 }
 
 - (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame{
+    NSScrollView *mainScrollView = [(AZWebView*)sender mainScrollView];
+    [mainScrollView setVerticalScrollElasticity:NSScrollElasticityNone];
+    [mainScrollView setHorizontalScrollElasticity:NSScrollElasticityNone];
+    
     DLog(@"%@",[sender stringByEvaluatingJavaScriptFromString:@"$(\".footer\").hide()"]);
     
     [self changeBackground:sender];

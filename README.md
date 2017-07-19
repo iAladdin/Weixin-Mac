@@ -21,8 +21,11 @@ Weixin-Mac
 目前使用外部依赖有:
 
 ```
-pod 'CocoaHTTPServer',	'~> 2.3'
-pod 'MASShortcut',      '~> 1.2.2'
+target "Weixin" do
+  pod 'CocoaHTTPServer',	'~> 2.3'
+  pod 'MASShortcut',      '~> 2.3.6'
+end
+
 ```
 
 ##开发环境需求
@@ -83,7 +86,7 @@ Cocoapods 0.24.0
 32. *建兰
 33. *伟
 34. *云涛
- 
+
 Latest:
 September Early
 http://ialaddin.github.io/Weixin-Mac/Weixin-September-Early.zip

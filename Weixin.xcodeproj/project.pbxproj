@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		830D406B17AA0D9100ECA8A9 /* alipay-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 830D406A17AA0D9100ECA8A9 /* alipay-logo.png */; };
 		830D407317AA23A000ECA8A9 /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = 830D407217AA23A000ECA8A9 /* left.png */; };
 		830D407517AA23A800ECA8A9 /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = 830D407417AA23A800ECA8A9 /* right.png */; };
 		832643D317D9CF130080228D /* local.js in Resources */ = {isa = PBXBuildFile; fileRef = 835DE7B517D5E40E00430263 /* local.js */; };
@@ -33,10 +32,10 @@
 		83A2A31D17DDCD4A004ED36A /* NSImage+File.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A2A31C17DDCD4A004ED36A /* NSImage+File.m */; };
 		83A3A72317D4AC940095426C /* NSButton+Style.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A3A72217D4AC940095426C /* NSButton+Style.m */; };
 		83A84C3C17DABECC00DB04D1 /* AZLocalScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A84C3B17DABECC00DB04D1 /* AZLocalScript.m */; };
-		83ABF34317D06DDF00C00BDE /* xiaodao.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 83ABF34217D06DDF00C00BDE /* xiaodao.jpg */; };
+		83CA8F491F1F26CE00AAD1F4 /* libPods-Weixin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3543EB6FFD6F8B6B13EB88AB /* libPods-Weixin.a */; };
+		83CA8F4C1F1F305E00AAD1F4 /* AZWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83CA8F4B1F1F305E00AAD1F4 /* AZWebView.m */; };
 		83DA673F1805282F008C19C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83DA673E1805282F008C19C7 /* Images.xcassets */; };
 		83E5562117AA57B800872BD9 /* AZThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 832251AE17AA45FE0078694F /* AZThemeManager.m */; };
-		862BAF2955A640FBB2499DE7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7863336A41414C69A30CF151 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,8 +62,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3543EB6FFD6F8B6B13EB88AB /* libPods-Weixin.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Weixin.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		65EA4306CFD2E34F7EDA2873 /* Pods-Weixin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weixin.release.xcconfig"; path = "Pods/Target Support Files/Pods-Weixin/Pods-Weixin.release.xcconfig"; sourceTree = "<group>"; };
+		76BEA0E3850704B864BB55BB /* Pods-Weixin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weixin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weixin/Pods-Weixin.debug.xcconfig"; sourceTree = "<group>"; };
 		7863336A41414C69A30CF151 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		830D406A17AA0D9100ECA8A9 /* alipay-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alipay-logo.png"; sourceTree = "<group>"; };
 		830D407217AA23A000ECA8A9 /* left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left.png; sourceTree = "<group>"; };
 		830D407417AA23A800ECA8A9 /* right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right.png; sourceTree = "<group>"; };
 		8315748017A8C99500EB5CE0 /* iTunes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunes.h; sourceTree = SOURCE_ROOT; };
@@ -105,10 +106,10 @@
 		83A3A72217D4AC940095426C /* NSButton+Style.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSButton+Style.m"; path = "Category/NSButton+Style.m"; sourceTree = "<group>"; };
 		83A84C3A17DABECC00DB04D1 /* AZLocalScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZLocalScript.h; sourceTree = "<group>"; };
 		83A84C3B17DABECC00DB04D1 /* AZLocalScript.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZLocalScript.m; sourceTree = "<group>"; };
-		83ABF34217D06DDF00C00BDE /* xiaodao.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = xiaodao.jpg; sourceTree = "<group>"; };
+		83CA8F4A1F1F305E00AAD1F4 /* AZWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AZWebView.h; sourceTree = "<group>"; };
+		83CA8F4B1F1F305E00AAD1F4 /* AZWebView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AZWebView.m; sourceTree = "<group>"; };
 		83DA673E1805282F008C19C7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		83EB85E017B3744C00B2574D /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
-		F49FE4F9476A479ABA5F6C92 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,13 +117,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83CA8F491F1F26CE00AAD1F4 /* libPods-Weixin.a in Frameworks */,
 				8332204217E856F100679DFD /* ScriptingBridge.framework in Frameworks */,
 				8371A39017CDF5DA002DC13F /* Security.framework in Frameworks */,
 				8371A38D17CDED0C002DC13F /* Cocoa.framework in Frameworks */,
 				835DE7B717D6FE6500430263 /* Sparkle.framework in Frameworks */,
 				8371A38C17CDECD8002DC13F /* libxml2.2.dylib in Frameworks */,
 				83676DB617A65DC5008B88EF /* WebKit.framework in Frameworks */,
-				862BAF2955A640FBB2499DE7 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,7 +146,7 @@
 				83676DA517A64844008B88EF /* WeixinTests */,
 				83676D8017A64844008B88EF /* Frameworks */,
 				83676D7F17A64844008B88EF /* Products */,
-				F49FE4F9476A479ABA5F6C92 /* Pods.xcconfig */,
+				CDB610CBF25FF7D81BAB4C30 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -171,6 +172,7 @@
 				83676DA017A64844008B88EF /* XCTest.framework */,
 				83676D8317A64844008B88EF /* Other Frameworks */,
 				7863336A41414C69A30CF151 /* libPods.a */,
+				3543EB6FFD6F8B6B13EB88AB /* libPods-Weixin.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -197,11 +199,12 @@
 				83676D9417A64844008B88EF /* AZAppDelegate.m */,
 				83676D9617A64844008B88EF /* MainMenu.xib */,
 				8315748017A8C99500EB5CE0 /* iTunes.h */,
-				830D406A17AA0D9100ECA8A9 /* alipay-logo.png */,
 				830D407217AA23A000ECA8A9 /* left.png */,
 				830D407417AA23A800ECA8A9 /* right.png */,
 				83DA673E1805282F008C19C7 /* Images.xcassets */,
 				83676D8817A64844008B88EF /* Supporting Files */,
+				83CA8F4A1F1F305E00AAD1F4 /* AZWebView.h */,
+				83CA8F4B1F1F305E00AAD1F4 /* AZWebView.m */,
 			);
 			path = Weixin;
 			sourceTree = "<group>";
@@ -211,7 +214,6 @@
 			children = (
 				83845BD217D7002B00F1C6F9 /* dsa_pub.pem */,
 				835DE7B317D5D08A00430263 /* Cats.bpack */,
-				83ABF34217D06DDF00C00BDE /* xiaodao.jpg */,
 				8371A39117CF5556002DC13F /* The_Garden_of_Words.bpack */,
 				83676D8917A64844008B88EF /* Weixin-Info.plist */,
 				83676D8A17A64844008B88EF /* InfoPlist.strings */,
@@ -254,6 +256,15 @@
 			name = Category;
 			sourceTree = "<group>";
 		};
+		CDB610CBF25FF7D81BAB4C30 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				76BEA0E3850704B864BB55BB /* Pods-Weixin.debug.xcconfig */,
+				65EA4306CFD2E34F7EDA2873 /* Pods-Weixin.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -261,12 +272,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 83676DAF17A64844008B88EF /* Build configuration list for PBXNativeTarget "Weixin" */;
 			buildPhases = (
-				720DBC025B55431E90B264B2 /* Check Pods Manifest.lock */,
+				720DBC025B55431E90B264B2 /* [CP] Check Pods Manifest.lock */,
 				83676D7A17A64844008B88EF /* Sources */,
 				83676D7B17A64844008B88EF /* Frameworks */,
 				83676D7C17A64844008B88EF /* Resources */,
 				83845BD017D6FF6B00F1C6F9 /* CopyFiles */,
-				D07CC76E2CE7458F87E223FF /* Copy Pods Resources */,
+				D07CC76E2CE7458F87E223FF /* [CP] Copy Pods Resources */,
+				9CD9EEB7688F0468B99FDC1E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -336,13 +348,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				832643D317D9CF130080228D /* local.js in Resources */,
-				830D406B17AA0D9100ECA8A9 /* alipay-logo.png in Resources */,
 				830D407517AA23A800ECA8A9 /* right.png in Resources */,
 				83845BD317D7002B00F1C6F9 /* dsa_pub.pem in Resources */,
 				83DA673F1805282F008C19C7 /* Images.xcassets in Resources */,
 				83676D8C17A64844008B88EF /* InfoPlist.strings in Resources */,
 				830D407317AA23A000ECA8A9 /* left.png in Resources */,
-				83ABF34317D06DDF00C00BDE /* xiaodao.jpg in Resources */,
 				8371A39217CF5556002DC13F /* The_Garden_of_Words.bpack in Resources */,
 				83676D9217A64844008B88EF /* Credits.rtf in Resources */,
 				83676D9817A64844008B88EF /* MainMenu.xib in Resources */,
@@ -360,34 +370,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		720DBC025B55431E90B264B2 /* Check Pods Manifest.lock */ = {
+		720DBC025B55431E90B264B2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		D07CC76E2CE7458F87E223FF /* Copy Pods Resources */ = {
+		9CD9EEB7688F0468B99FDC1E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Weixin/Pods-Weixin-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D07CC76E2CE7458F87E223FF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Weixin/Pods-Weixin-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -399,6 +424,7 @@
 			files = (
 				83A2A31D17DDCD4A004ED36A /* NSImage+File.m in Sources */,
 				83E5562117AA57B800872BD9 /* AZThemeManager.m in Sources */,
+				83CA8F4C1F1F305E00AAD1F4 /* AZWebView.m in Sources */,
 				83A84C3C17DABECC00DB04D1 /* AZLocalScript.m in Sources */,
 				83676D8E17A64844008B88EF /* main.m in Sources */,
 				83676D9517A64844008B88EF /* AZAppDelegate.m in Sources */,
@@ -533,7 +559,7 @@
 		};
 		83676DB017A64844008B88EF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F49FE4F9476A479ABA5F6C92 /* Pods.xcconfig */;
+			baseConfigurationReference = 76BEA0E3850704B864BB55BB /* Pods-Weixin.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
@@ -543,6 +569,7 @@
 					"$(inherited)",
 					"$(SRCROOT)",
 				);
+				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Weixin/Weixin-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -552,6 +579,20 @@
 				);
 				INFOPLIST_FILE = "Weixin/Weixin-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-l\"CocoaAsyncSocket\"",
+					"-l\"CocoaHTTPServer\"",
+					"-l\"CocoaLumberjack\"",
+					"-l\"MASShortcut\"",
+					"-l\"xml2\"",
+					"-framework",
+					"\"Carbon\"",
+					"-framework",
+					"\"CoreServices\"",
+					"-framework",
+					"\"Security\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -559,7 +600,7 @@
 		};
 		83676DB117A64844008B88EF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F49FE4F9476A479ABA5F6C92 /* Pods.xcconfig */;
+			baseConfigurationReference = 65EA4306CFD2E34F7EDA2873 /* Pods-Weixin.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
@@ -569,6 +610,7 @@
 					"$(inherited)",
 					"$(SRCROOT)",
 				);
+				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Weixin/Weixin-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -578,6 +620,20 @@
 				);
 				INFOPLIST_FILE = "Weixin/Weixin-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-l\"CocoaAsyncSocket\"",
+					"-l\"CocoaHTTPServer\"",
+					"-l\"CocoaLumberjack\"",
+					"-l\"MASShortcut\"",
+					"-l\"xml2\"",
+					"-framework",
+					"\"Carbon\"",
+					"-framework",
+					"\"CoreServices\"",
+					"-framework",
+					"\"Security\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

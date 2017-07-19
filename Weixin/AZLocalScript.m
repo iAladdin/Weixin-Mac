@@ -22,10 +22,10 @@
 - (void)getImageUrl:(NSString *) urlString withCookie:(NSString *) cookieString{
     ALog(@"%@ %@",urlString,cookieString);
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc]
-                                    initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://wx.qq.com%@",urlString]]];
+                                    initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://web.wechat.com%@",urlString]]];
     [request setHTTPMethod:@"GET"];
     [request setValue:cookieString forHTTPHeaderField:@"Cookie"];
-    [request setValue:@"https://wx.qq.com/?lang=zh_CN" forHTTPHeaderField:@"Referer"];
+    [request setValue:@"https://web.wechat.com/?lang=zh_CN" forHTTPHeaderField:@"Referer"];
     
     
     [NSURLConnection sendAsynchronousRequest:request

@@ -8,15 +8,16 @@
 
 #import <Cocoa/Cocoa.h>
 #import <WebKit/WebKit.h>
+#import "AZWebView.h"
 @interface AZAppDelegate : NSObject <NSApplicationDelegate,NSUserNotificationCenterDelegate>{
     NSPanel * _imagePanel;
 }
 
 @property (assign) IBOutlet NSWindow *window;
-@property (weak) IBOutlet WebView *webView;
+@property (weak) IBOutlet AZWebView *webView;
 @property (weak) IBOutlet NSView *toolBar;
-@property (weak) IBOutlet NSButton *sponsor;
-@property (weak) IBOutlet NSButton *donate;
+//@property (weak) IBOutlet NSButton *sponsor;
+//@property (weak) IBOutlet NSButton *donate;
 @property (assign) BOOL hasNew;
 
 - (void)changeBackground:(WebView *)sender;
