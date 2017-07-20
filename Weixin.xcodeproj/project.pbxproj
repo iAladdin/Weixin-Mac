@@ -32,6 +32,7 @@
 		83A2A31D17DDCD4A004ED36A /* NSImage+File.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A2A31C17DDCD4A004ED36A /* NSImage+File.m */; };
 		83A3A72317D4AC940095426C /* NSButton+Style.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A3A72217D4AC940095426C /* NSButton+Style.m */; };
 		83A84C3C17DABECC00DB04D1 /* AZLocalScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A84C3B17DABECC00DB04D1 /* AZLocalScript.m */; };
+		83B7C4421F1F68B100E89418 /* NSString+NSString_decode.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B7C4411F1F68B100E89418 /* NSString+NSString_decode.m */; };
 		83CA8F491F1F26CE00AAD1F4 /* libPods-Weixin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3543EB6FFD6F8B6B13EB88AB /* libPods-Weixin.a */; };
 		83CA8F4C1F1F305E00AAD1F4 /* AZWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83CA8F4B1F1F305E00AAD1F4 /* AZWebView.m */; };
 		83DA673F1805282F008C19C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83DA673E1805282F008C19C7 /* Images.xcassets */; };
@@ -106,6 +107,8 @@
 		83A3A72217D4AC940095426C /* NSButton+Style.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSButton+Style.m"; path = "Category/NSButton+Style.m"; sourceTree = "<group>"; };
 		83A84C3A17DABECC00DB04D1 /* AZLocalScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZLocalScript.h; sourceTree = "<group>"; };
 		83A84C3B17DABECC00DB04D1 /* AZLocalScript.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZLocalScript.m; sourceTree = "<group>"; };
+		83B7C4401F1F68B100E89418 /* NSString+NSString_decode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+NSString_decode.h"; sourceTree = "<group>"; };
+		83B7C4411F1F68B100E89418 /* NSString+NSString_decode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+NSString_decode.m"; sourceTree = "<group>"; };
 		83CA8F4A1F1F305E00AAD1F4 /* AZWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AZWebView.h; sourceTree = "<group>"; };
 		83CA8F4B1F1F305E00AAD1F4 /* AZWebView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AZWebView.m; sourceTree = "<group>"; };
 		83DA673E1805282F008C19C7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -252,6 +255,8 @@
 				835DE7B117D5B4E300430263 /* NSUserDefaults+IntValue.m */,
 				83A2A31B17DDCD4A004ED36A /* NSImage+File.h */,
 				83A2A31C17DDCD4A004ED36A /* NSImage+File.m */,
+				83B7C4401F1F68B100E89418 /* NSString+NSString_decode.h */,
+				83B7C4411F1F68B100E89418 /* NSString+NSString_decode.m */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -426,6 +431,7 @@
 				83E5562117AA57B800872BD9 /* AZThemeManager.m in Sources */,
 				83CA8F4C1F1F305E00AAD1F4 /* AZWebView.m in Sources */,
 				83A84C3C17DABECC00DB04D1 /* AZLocalScript.m in Sources */,
+				83B7C4421F1F68B100E89418 /* NSString+NSString_decode.m in Sources */,
 				83676D8E17A64844008B88EF /* main.m in Sources */,
 				83676D9517A64844008B88EF /* AZAppDelegate.m in Sources */,
 				835DE7B217D5B4E300430263 /* NSUserDefaults+IntValue.m in Sources */,
@@ -578,7 +584,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "Weixin/Weixin-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-l\"CocoaAsyncSocket\"",
@@ -619,7 +625,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "Weixin/Weixin-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-l\"CocoaAsyncSocket\"",

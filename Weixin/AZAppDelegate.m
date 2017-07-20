@@ -8,11 +8,13 @@
 
 #import "AZAppDelegate.h"
 #import <MASShortcut/Shortcut.h>
+#import <AFNetworking/AFNetworking.h>
 #import "AZWebView.h"
 #import "iTunes.h"
 #import "AZThemeManager.h"
 #import "NSButton+Style.h"
 #import "AZLocalScript.h"
+#import "NSString+NSString_decode.h"
 @implementation AZAppDelegate
 
 
@@ -189,7 +191,32 @@
 
 #pragma mark WebFrameLoadDelegate START
 - (id)webView:(WebView *)sender identifierForInitialRequest:(NSURLRequest *)request fromDataSource:(WebDataSource *)dataSource{
-    DLog(@"%@ %@ %@",sender,request,[[dataSource response] MIMEType]);
+    NSString * urlString = [request.URL absoluteString];
+    if ([urlString hasPrefix:@"https://file.wx.qq.com/cgi-bin/mmwebwx-bin/webwxgetmedia"]) {
+        NSArray * paths = NSSearchPathForDirectoriesInDomains(NSDownloadsDirectory, NSUserDomainMask, YES);
+        NSString * downloadPath = [paths firstObject];
+        NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+        
+        NSURL *URL = [NSURL URLWithString:urlString];
+        NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+        
+        NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:^(NSProgress * _Nonnull downloadProgress)
+        {
+            NSLog(@"Progress: %f", downloadProgress.fractionCompleted);
+            
+        } destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
+            NSURL *documentsDirectoryURL = [NSURL URLWithString:downloadPath];
+            return [documentsDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
+        } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
+            NSData * data = [NSData dataWithContentsOfURL:[response URL]];
+            NSString * filePathString = [filePath absoluteString];
+            NSString * filePathDecodeString = [[filePathString stringByDecodingURLFormat] stringByDecodingURLFormat];
+            [data writeToFile:filePathDecodeString options:NSDataWritingAtomic error:&error];
+        }];
+        [downloadTask resume];
+        
+    }
     return dataSource;
 }
 #pragma mark WebFrameLoadDelegate END
@@ -225,6 +252,8 @@
 decisionListener:(id<WebPolicyDecisionListener>)listener{
     DLog(@"%s %@ \n %@ \n %@",__PRETTY_FUNCTION__,actionInformation,request,frameName);
     [[NSWorkspace sharedWorkspace] openURL:[request URL]];
+    
+    
 }
 #pragma mark WebPolicyDelegate END
 @end
