@@ -250,10 +250,28 @@
         request:(NSURLRequest *)request
    newFrameName:(NSString *)frameName
 decisionListener:(id<WebPolicyDecisionListener>)listener{
-    DLog(@"%s %@ \n %@ \n %@",__PRETTY_FUNCTION__,actionInformation,request,frameName);
-    [[NSWorkspace sharedWorkspace] openURL:[request URL]];
+    WebFrame * frame = [actionInformation objectForKey:@"WebElementFrame"];
+    NSString * html = [[frame webView] stringByEvaluatingJavaScriptFromString:@"document.body.innerHTML"];
+    DLog(@"%s %@ \n %@ \n %@\n %@",__PRETTY_FUNCTION__,actionInformation,request,frameName,html);
     
-    
+    NSString * url = [[request URL] absoluteString];
+    NSString * targetUrl = nil;
+    if ([url hasPrefix:@"https://wx.qq.com/cgi-bin/mmwebwx-bin/webwxcheckurl"]) {
+        NSArray * coms = [url componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"?&"]];
+        
+        for (NSString * item in coms) {
+            NSArray * itemComs = [item componentsSeparatedByString:@"="];
+            if ([itemComs count] == 2) {
+                if ([[itemComs firstObject]   isEqualToString:@"requrl"]) {
+                    targetUrl = [[itemComs lastObject] stringByDecodingURLFormat];
+                    break;
+                }
+            }
+        }
+    }
+    if (targetUrl&&targetUrl.length > 0 ) {
+        [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:targetUrl]];
+    }
 }
 #pragma mark WebPolicyDelegate END
 @end
